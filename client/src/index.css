@@ -1,0 +1,71 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;600;700;800;900&family=Poppins:wght@500&display=swap");
+/* .bg-gradient-radial {
+  background: radial-gradient(
+    ellipse farthest-side at -500% 50%,
+    transparent 70%,
+    #3f4041 90%
+  );
+} */
+.bg-gradient-radial {
+  background: radial-gradient(circle at left, transparent 10%, #3f4041 35%);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hero-image {
+  mask-image: url("./assets/images/Vector 2.png");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-mode: alpha;
+  height: 504px;
+  width: auto;
+}
+
+/* @media (min-width: ); /* @media (max-width: 1280px) {
+  .hero-image {
+    -webkit-mask-size: 360px 504px;
+  }
+}  */
+
+/* @media (max-width: 1130px) {
+  .hero-image {
+    -webkit-mask-size: 330px 504px;
+  }
+} */
+
+/* @media (max-width: 1024px) {
+  .hero-image {
+    -webkit-mask-size: 400px 504px;
+  }
+}  */
+
+/* Responsif pada layar dengan lebar lebih dari 768px (laptop dan layar lebih besar) */
+/* @media (min-width: 1025px) {
+  .hero-image {
+    -webkit-mask-size: 400px 504px; 
+  }
+} */

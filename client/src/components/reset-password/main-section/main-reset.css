@@ -1,0 +1,31 @@
+.custom-placeholder-color::first-letter::placeholder {
+  color: red;
+}
+
+/* label {
+  display: inline-block;
+}
+label > span {
+  position: absolute;
+  padding-left: 3px;
+}
+label > span span {
+  color: blue;
+}
+input {
+  position: relative;
+  background: white;
+}
+input:invalid {
+  background: none;
+} */
+
+/* label {
+  display: inline-block;
+  font-family: monospace;
+}
+input:invalid {
+  background: linear-gradient(to right, red 2.2em, blue 2.2em);
+  background-clip: text;
+  color: transparent;
+}  */
