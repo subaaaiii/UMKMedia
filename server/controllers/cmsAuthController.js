@@ -117,27 +117,36 @@ module.exports = {
   updateUser: async (req, res) => {
     const { username, password, roleId, access } = req.body;
     const { id } = req.params;
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    const updateUser = await auth.update(
-      {
-        username: username,
-        password: hashedPassword,
-        roleId: roleId,
-        access: access,
-      },
-      {
-        where: {
-          id: id,
-        },
-      }
-    );
-
+  
+    const updateFields = {};
+  
+    // Memasukkan field yang ingin di-update jika ada isinya
+    if (username) updateFields.username = username;
+    if (password) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      updateFields.password = hashedPassword;
+    }
+    if (roleId) updateFields.roleId = roleId;
+    if (access) updateFields.access = access;
+  
+    // Mengecek apakah ada field yang ingin di-update
+    if (Object.keys(updateFields).length === 0) {
+      return res.status(400).json({
+        message: "No fields to update",
+      });
+    }
+  
+    // Melakukan update pada database
+    const updateUser = await auth.update(updateFields, {
+      where: { id },
+    });
+  
     return res.status(200).json({
       message: "User Updated!",
       data: updateUser,
     });
   },
+  
 
   deleteUser: async (req, res) => {
     const { id } = req.params;

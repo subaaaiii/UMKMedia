@@ -173,7 +173,7 @@ function ArtikelFormSection({ id }) {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Kelas Telah Dihapus",
+            title: "Artikel Telah Dihapus",
             text: "Silahkan Cek Dashboard",
             showConfirmButton: false,
             timer: 1500,

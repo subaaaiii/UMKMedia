@@ -5,6 +5,7 @@ import { images } from "../../../constants";
 import { useForm } from "react-hook-form";
 import { LuLoader2 } from "react-icons/lu";
 import { api } from "../../../api/api";
+import { useNavigate } from "react-router-dom";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signInSchema } from "./lib/signinSchema";
@@ -30,7 +31,10 @@ function MainSection() {
 
   const [googleButton, setGoogleButton] = useState(false);
   const [showBaru, setShowBaru] = useState(false);
-
+  const navigate = useNavigate();
+  const redirectToDashboard = () => {
+    navigate("/");
+  };
   const {
     register,
     handleSubmit,
@@ -62,6 +66,15 @@ function MainSection() {
         "verified",
         JSON.stringify(response.data.user.verified)
       );
+      redirectToDashboard();
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Login berhasil",
+        text: "Silahkan cek kelas kelas menarik kami",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       reset();
     } catch (error) {
       console.log(error);
