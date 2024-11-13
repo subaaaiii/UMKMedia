@@ -4,7 +4,7 @@ import FAQItem from "./FAQItem";
 const dummyEl = {
   id: "1",
   question:
-    "Apa itu growlab? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lectus quis tortor vehicula dapibus. Ut pulvinar eu arcu id mollis. Pellentesque",
+    "Apa itu UMKMedia? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lectus quis tortor vehicula dapibus. Ut pulvinar eu arcu id mollis. Pellentesque",
   answer:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lectus quis tortor vehicula dapibus. Ut pulvinar eu arcu id mollis. Pellentesque sagittis mattis quam id condimentum. Suspendisse potenti. Suspendisse non augue euismod, volutpat lacus at, dignissim lectus. Pellentesque sagittis, dui ut gravida imperdiet, velit elit malesuada nulla, et porttitor mi quam nec dui. Nunc tempor quam non lectus euismod condimentum. Maecenas laoreet bibendum massa ut malesuada. Nunc imperdiet urna ante, nec viverra dui tempus in. Nulla ut tincidunt risus, eu dapibus eros. Proin sed pretium lacus. Praesent nunc nisi, porttitor vitae odio eu, tempus luctus justo. Nullam ac lobortis.",
 };

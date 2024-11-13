@@ -13,7 +13,7 @@ function HeroSection() {
             Sebuah perjalanan panjang dengan satu mimpi yang besar
           </p>
           <p className="text-[16px] lg:text-[18px] font-light font-[Heebo] leading-[28px] text-whiteSmoke500">
-            Growlab adalah end to end platform yang membantu bisnis dan UMKM
+          UMKMedia adalah end to end platform yang membantu bisnis dan UMKM
             mengembangkan usaha dan menaikkan omset melalui program
             pembelajaran, pendampingan, layanan jasa hingga evaluasi
           </p>

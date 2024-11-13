@@ -31,7 +31,7 @@ export default function MentorSection() {
               </p>
             </div>
             <p className="text-[12px] md:text-[18px] font-light leading-[20px] md:leading-[50px] text-justify">
-              CEO & Co-Founder dari Growlab ini sudah berpengalaman dalam bidang
+              CEO & Co-Founder dari UMKMedia ini sudah berpengalaman dalam bidang
               digital marketing sejak 2018, telah berkolaborasi dengan berbagai
               perusahaan nasional dan membantu lebih dari 50 UMKM dalam
               mengembangkan bisnis di dunia digital.
@@ -66,7 +66,7 @@ export default function MentorSection() {
               </p>
             </div>
             <p className="text-[12px] md:text-[18px] font-light leading-[20px] md:leading-[50px] text-justify">
-              COO & Co-Founder dari Growlab ini telah berpengalaman sejak 2018
+              COO & Co-Founder dari UMKMedia ini telah berpengalaman sejak 2018
               di berbagai industri seperti E-commerce hingga industri Fast
               Moving Consumer Goods (FMCG) dan membantu banyak perusahaan
               start-up raksasa seperti Tokopedia, Gojek, Blibli dan lainnya.

@@ -13,29 +13,29 @@ import "aos/dist/aos";
 function Faq() {
   const [dataFaq, setDataFaq] = useState([
     {
-      title: "Apa itu Growlab?",
+      title: "Apa itu UMKMedia?",
       answer:
-        "Growlab adalah end to end platform yang berfungsi sebagai wadah pebisnis UMKM dari seluruh Indonesia.",
+        "UMKMedia adalah end to end platform yang berfungsi sebagai wadah pebisnis UMKM dari seluruh Indonesia.",
       link: null,
     },
     {
-      title: "Apa program yang dimiliki oleh Growlab?",
+      title: "Apa program yang dimiliki oleh UMKMedia?",
       answer: [
         "A. pembelajaran -> program yang membantu pebisnis UMKM di Indonesia untuk dapat menumbuhkan bisnis mereka melalui komunitas pembelajaran, online course, webinar, seminar dan bootcamp.",
-        "B. pendampingan -> program yang membantu pebisnis UMKM di Indonesia untuk meningkatkan penjualannya melalui program akselerator dan perfomance marketing dari Growlab.",
+        "B. pendampingan -> program yang membantu pebisnis UMKM di Indonesia untuk meningkatkan penjualannya melalui program akselerator dan perfomance marketing dari UMKMedia.",
         "C. pendanaan -> program yang membantu pebisnis UMKM di Indonesia untuk scaling up usahanya melalui program pendanaan dalam bentuk pinjaman dan investasi.",
       ],
       link: null,
     },
     {
       title:
-        "Apa yang bisa saya harapkan setelah bergabung menjadi bagian dari ekosistem Growlab?",
+        "Apa yang bisa saya harapkan setelah bergabung menjadi bagian dari ekosistem UMKMedia?",
       answer:
         "Jika mengikuti dengan baik, kamu berkesempatan untuk dapat mengembangkan bisnismu lebih baik melalui aspek operasional yang terstruktur, marketing dan finance.",
       link: null,
     },
     {
-      title: "Apakah ada biaya untuk bergabung ke dalam ekosistem Growlab?",
+      title: "Apakah ada biaya untuk bergabung ke dalam ekosistem UMKMedia?",
       answer:
         "Saat ini untuk bergabung ke dalam ekosistem masih GRATIS, kamu dapat mengisi form pendaftaran disini: ",
       link: "https://docs.google.com/forms/d/e/1FAIpQLSdtiVnJeZjVb6-tWc_HKKZZvi_ZppZeSYzgRcQCygOL7sp-5w/viewform",
@@ -53,7 +53,7 @@ function Faq() {
         data-aos-duration="1000"
         className="text-[22px] lg:text-[40px] w-[208px] lg:w-auto  font-bold leading-[32px] lg:leading-[60px] text-black500 text-center"
       >
-        Pertanyaan Seputar Growlab
+        Pertanyaan Seputar UMKMedia
       </h1>
       <Accordion defaultIndex={[0]} allowMultiple className="w-full">
         {dataFaq.map((faq, index) => (

@@ -25,7 +25,7 @@ function KerjaSection() {
         className="flex flex-col justify-start items-center mt-[60px] lg:mt-[10px] px-[10px] lg:px-0 w-full lg:w-[100%] gap-[52px]"
         style={{ height: `${getHeight()}px`, backgroundColor: "#EAEAEA" }}>
         <h1 className="max-w-[564px] text-black500 text-[30px] lg:text-[40px] mt-[80px] font-bold leading-[36px] lg:leading-[60px] text-center">
-            Apa yang Membuat Nyaman Bekerja di Growlab?
+            Apa yang Membuat Nyaman Bekerja di UMKMedia?
         </h1>
         <div className="flex flex-col justify-center lg:flex-row lg:gap-4">
             <div className="text-center mb-10 lg:mb-0">

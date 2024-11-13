@@ -16,7 +16,7 @@ function ReviewSection() {
       nama: "Astri",
       perushaaan: "Bites Gummy World",
       deskripsi:
-        "Puas sama hasil kerja Growlab, kerjanya cepat khususnya saat revisi konten, ada service live streaming di marketplace dan hasilnya oke.",
+        "Puas sama hasil kerja UMKMedia, kerjanya cepat khususnya saat revisi konten, ada service live streaming di marketplace dan hasilnya oke.",
       bigPic: clientPic.client04,
       smallPic: clientPic.client04,
     },
@@ -24,7 +24,7 @@ function ReviewSection() {
       nama: "Afwi",
       perushaaan: "Barokah Herbal Center",
       deskripsi:
-        "Di Growlab kita mau tanya apa, perlu apa, semuanya bisa dibantu, ilmunya dikasih semua juga, alhamdulilah.",
+        "Di UMKMedia kita mau tanya apa, perlu apa, semuanya bisa dibantu, ilmunya dikasih semua juga, alhamdulilah.",
       bigPic: clientPic.client03,
       smallPic: clientPic.client03,
     },
@@ -32,7 +32,7 @@ function ReviewSection() {
       nama: "Hendra",
       perushaaan: "Yesamalika",
       deskripsi:
-        "Growlab memegang komitmen yang dijanjikan, tidak muluk-muluk, prosesnya terukur,sistematis dan selalu di monitor, jadi kami merasa selalu didampingi. Setelah dibantu growlab bisnis saya terasa perubahan yang signifikan, contohnya ada kenaikan GMV yang diimbangi dengan ROAS yang bagus.",
+        "UMKMedia memegang komitmen yang dijanjikan, tidak muluk-muluk, prosesnya terukur,sistematis dan selalu di monitor, jadi kami merasa selalu didampingi. Setelah dibantu growlab bisnis saya terasa perubahan yang signifikan, contohnya ada kenaikan GMV yang diimbangi dengan ROAS yang bagus.",
       bigPic: clientPic.client12,
       smallPic: clientPic.client12,
     },

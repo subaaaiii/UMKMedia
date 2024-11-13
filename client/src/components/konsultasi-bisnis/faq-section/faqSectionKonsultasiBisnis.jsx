@@ -13,13 +13,13 @@ import "aos/dist/aos";
 function FaqSectionKonsultasiBisnis() {
   const [dataFaq, setDataFaq] = useState([
     {
-      title: "Seperti apa bentuk konsultasi di growlab?",
+      title: "Seperti apa bentuk konsultasi di UMKMedia?",
       answer:
         "Program berbentuk live class yang akan diadakan via online menggunakan google meet untuk membedah bisnis dan menyajikan hasil evaluasi dan riset pasar yang bermanfaat untuk pengembangan bisnis Anda kedepannya.",
       link: null,
     },
     {
-      title: "Berapa biaya yang diperlukan untuk konsultasi di growlab?",
+      title: "Berapa biaya yang diperlukan untuk konsultasi di UMKMedia?",
       answer: [
         "Biaya konsultasi tergantung dengan seberapa banyak sesi yang diikuti, Anda dapat bertanya kepada admin untuk lebih tau mengenai biaya lebih detail."
       ],
@@ -27,9 +27,9 @@ function FaqSectionKonsultasiBisnis() {
     },
     {
       title:
-        "Keuntungan apa saja yang akan Saya dapatkan jika mengikuti program konsultasi di growlab?",
+        "Keuntungan apa saja yang akan Saya dapatkan jika mengikuti program konsultasi di UMKMedia?",
       answer:
-        "Anda dapat bergabung ke dalam komunitas bisnis growlab yang tersebar dari seluruh Indonesia serta dapat berkolaborasi dengan tim Growlab di dalam hal digital marketing untuk membantu meningkatkan omset penjualan bisnis Anda.",
+        "Anda dapat bergabung ke dalam komunitas bisnis UMKMedia yang tersebar dari seluruh Indonesia serta dapat berkolaborasi dengan tim UMKMedia di dalam hal digital marketing untuk membantu meningkatkan omset penjualan bisnis Anda.",
       link: null,
     },
     {

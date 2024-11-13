@@ -69,7 +69,7 @@ const PilarCarousel = () => {
                 1. Pembelajaran
               </h2>
               <p>
-                Growlab menyediakan berbagai jenis program <br />
+              UMKMedia menyediakan berbagai jenis program <br />
                 pembelajaran seputar bisnis khususnya
                 <br />
                 bisnis digital. Mulai dari digital course hingga
@@ -90,7 +90,7 @@ const PilarCarousel = () => {
                 2. Pendampingan
               </h2>
               <p className="text-[24px] lg:text-[24px] font-medium leading-[36px] lg:leading-[36px] text-white">
-                Growlab memiliki 2 program pendampingan efektif yaitu :
+              UMKMedia memiliki 2 program pendampingan efektif yaitu :
               </p>
               <div
                 data-aos="fade-up"
@@ -98,7 +98,7 @@ const PilarCarousel = () => {
                 className="max-w-[873px] text-[14px] lg:text-[18px] lg:leading-[36px] text-whiteSmoke600" 
               >
                 <h3 className="font-bold mt-[30px]">
-                  Growlab Business Accelerator (GBA)
+                UMKMedia Business Accelerator (GBA)
                 </h3>
                 <p>
                   GBA merupakan program bimbingan intensif dengan sistem belajar

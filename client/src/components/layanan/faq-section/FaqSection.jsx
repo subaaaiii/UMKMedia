@@ -41,9 +41,9 @@ const FaqSection = () => {
     [      
       {
         title:
-          "Bagaimana growlab dapat membantu bisnis Kalian melalui website dan aplikasi?",
+          "Bagaimana UMKMedia dapat membantu bisnis Kalian melalui website dan aplikasi?",
         answer:
-          "Tim growlab merupakan spesialisasi digital marketing yang telah berpengalaman lebih dari 3 tahun. Setelah proses diskusi, Kami akan mulai mengerjakan perencanaan sesuai data yang Anda isi pada Form. Kami akan selalu berkomunikasi sampai mendapatkan hasil yang diinginkan.",
+          "Tim UMKMedia merupakan spesialisasi digital marketing yang telah berpengalaman lebih dari 3 tahun. Setelah proses diskusi, Kami akan mulai mengerjakan perencanaan sesuai data yang Anda isi pada Form. Kami akan selalu berkomunikasi sampai mendapatkan hasil yang diinginkan.",
         link: null
       },
       {
@@ -55,7 +55,7 @@ const FaqSection = () => {
       },
       {
         title:
-          "Apakah growlab dapat membantu pembuatan segala jenis website dan aplikasi?",
+          "Apakah UMKMedia dapat membantu pembuatan segala jenis website dan aplikasi?",
         answer:
           "Ya, Kami dapat membantu segala jenis pembuatan website dan aplikasi selama tidak menyalahi aturan perundang-undangan (contoh: website pornografi, website judi online, dan lainnya).",
         link: null
@@ -71,9 +71,9 @@ const FaqSection = () => {
     [
       {
         title:
-          "Bagaimana growlab dapat membantu bisnis Kalian melalui sosial media?",
+          "Bagaimana UMKMedia dapat membantu bisnis Kalian melalui sosial media?",
         answer:
-          "Tim growlab merupakan spesialisasi digital marketing yang telah berpengalaman lebih dari 3 tahun. Setelah proses diskusi, Kami akan mulai mengerjakan perencanaan sesuai data yang Anda isi pada Form. Kami akan selalu berkomunikasi sampai mendapatkan hasil yang diinginkan.",
+          "Tim UMKMedia merupakan spesialisasi digital marketing yang telah berpengalaman lebih dari 3 tahun. Setelah proses diskusi, Kami akan mulai mengerjakan perencanaan sesuai data yang Anda isi pada Form. Kami akan selalu berkomunikasi sampai mendapatkan hasil yang diinginkan.",
         link: null
       },
       {
@@ -85,7 +85,7 @@ const FaqSection = () => {
       },
       {
         title:
-          "Apakah growlab dapat membantu pembuatan segala jenis konten di sosial media?",
+          "Apakah UMKMedia dapat membantu pembuatan segala jenis konten di sosial media?",
         answer:
           "Ya, Kami dapat membantu segala jenis pembuatan konten dan proses kreatif lainnya selama tidak menyalahi aturan perundang-undangan (contoh: pornografi, judi online, dan lainnya).",
         link: null
@@ -101,9 +101,9 @@ const FaqSection = () => {
     [
       {
         title:
-          "Bagaimana growlab dapat membantu bisnis Kalian melalui pembuatan logo?",
+          "Bagaimana UMKMedia dapat membantu bisnis Kalian melalui pembuatan logo?",
         answer:
-          "Tim growlab merupakan spesialisasi digital marketing yang telah berpengalaman lebih dari 3 tahun. Setelah proses diskusi, Kami akan mulai mengerjakan perencanaan sesuai data yang Anda isi pada Form. Kami akan selalu berkomunikasi sampai mendapatkan hasil yang diinginkan.",
+          "Tim UMKMedia merupakan spesialisasi digital marketing yang telah berpengalaman lebih dari 3 tahun. Setelah proses diskusi, Kami akan mulai mengerjakan perencanaan sesuai data yang Anda isi pada Form. Kami akan selalu berkomunikasi sampai mendapatkan hasil yang diinginkan.",
         link: null
       },
       {

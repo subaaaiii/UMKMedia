@@ -13,7 +13,7 @@ function HeroSection() {
             <span className="text-indigoDye500">for Entrepreneurs</span>
           </h1>
           <p className=" text-center lg:text-start text-[18px] leading-[28px] font-light max-w-[536px]">
-            Growlab adalah end to end platform yang berfungsi untuk mewadahi
+          UMKMedia adalah end to end platform yang berfungsi untuk mewadahi
             pebisnis UMKM di Indonesia untuk tumbuh dan berkembang bersama.
           </p>
         </div>

@@ -25,10 +25,10 @@ function HeroSection() {
           <h1 className="text-[24px] text-white textAlign-left lg:text-start xl:text-[50px] font-bold uppercase leading-[36px] xl:leading-[64px]">
             wujudkan inovasimu
             <br />
-            bersama growlab
+            bersama UMKMedia
           </h1>
           <p className="text-left lg:text-start text-[18px] leading-[28px] font-light max-w-[536px] text-black">
-            Mari kembangkan perjalanan karirmu bersama Growlab, karena kami
+            Mari kembangkan perjalanan karirmu bersama UMKMedia, karena kami
             yakin kamu selalu memiliki inovasi yang menarik.
           </p>
         </div>
