@@ -57,17 +57,17 @@ function DetailKelasBisnis() {
       );
       // setWishlist(response.data.data);
       setStatus(response.data.data.isRemove);
-      if (status === true) {
+      if (status === false) {
         Swal.fire({
           title: "Info",
-          text: "Berhasil Menambah Wishlist",
+          text: "Berhasil Menghapus Wishlist",
           icon: "success",
           confirmButtonColor: "#0F1011",
         });
       } else {
         Swal.fire({
           title: "Info",
-          text: "Berhasil Menghapus Wishlist",
+          text: "Berhasil Menambah Wishlist",
           icon: "success",
           confirmButtonColor: "#0F1011",
         });

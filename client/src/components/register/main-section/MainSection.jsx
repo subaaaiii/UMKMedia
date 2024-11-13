@@ -21,6 +21,7 @@ import { api } from "../../../api/api";
 import Swal from "sweetalert2";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Spinner } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 function MainSection() {
   const dispatch = useDispatch();
@@ -29,6 +30,10 @@ function MainSection() {
   const [showConfirm, setShowConfirm] = useState(false);
 
   const [googleButton, setGoogleButton] = useState(false);
+  const navigate = useNavigate();
+  const redirectToDashboard = () => {
+    navigate("/");
+  };
 
   const {
     register,
@@ -109,6 +114,15 @@ function MainSection() {
           JSON.stringify(response.data.data.newUser.verified)
         );
       }
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Register berhasil",
+        text: "Silahkan verifikasi akun anda",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      redirectToDashboard();
 
       // reset();
     } catch (error) {
