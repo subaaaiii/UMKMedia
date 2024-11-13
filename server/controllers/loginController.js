@@ -190,7 +190,7 @@ module.exports = {
       let mail = {
         from: `Admin <zainurrouf4@gmail.com>`,
         to: `${email}`,
-        subject: ` verifikasi akun growlab`,
+        subject: ` verifikasi akun UMKMedia`,
         // html: `<a href="${resetLink}">${resetLink}</a>`,
         html: tempResult,
       };

@@ -17,7 +17,7 @@ function ClientSection() {
       >
         Kami dipercaya oleh{" "}
         <span className="font-bold text-indigoDye500"> 500+</span> UMKM dalam
-        mencapai kesuksan mereka
+        mencapai kesuksesan mereka
       </h1>
       <div className=" max-w-full 2xl:max-w-[1080px] overflow-hidden   ">
         <ClientCarousel />

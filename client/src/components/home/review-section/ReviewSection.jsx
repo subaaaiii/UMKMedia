@@ -73,7 +73,7 @@ function ReviewSection() {
         data-aos-duration="1000"
         className="max-w-[564px] text-black500 text-[24px] lg:text-[40px] font-bold leading-[36px] lg:leading-[60px] text-center"
       >
-        Pendapat Mereka Tentang Growlab
+        Pendapat Mereka Tentang UMKMedia
       </h1>
       <div className="w-full gap-[24px] flex flex-col lg:flex-row justify-center ">
         <div className="w-full gap-[24px] p-[24px] flex flex-col lg:flex-row items-center shadow-customSm rounded-[10px]">

@@ -253,9 +253,9 @@ module.exports = {
       const tempCompile = handlebars.compile(tempEmail);
       const tempResult = tempCompile({ verificationLink });
       let mail = {
-        from: `Admin <zainurrouf4@gmail.com>`,
+        from: `Admin <officialumkmedia@gmail.com>`,
         to: `${dataToken.email}`,
-        subject: ` verifikasi akun growlab`,
+        subject: ` verifikasi akun UMKMedia`,
         // html: `<a href="${resetLink}">${resetLink}</a>`,
         html: tempResult,
       };
@@ -367,9 +367,9 @@ module.exports = {
       const tempCompile = handlebars.compile(tempEmail);
       const tempResult = tempCompile({ verificationLink });
       let mail = {
-        from: `Admin <zainurrouf4@gmail.com>`,
+        from: `Admin <officialumkmedia@gmail.com>`,
         to: `${email}`,
-        subject: ` verifikasi akun growlab`,
+        subject: ` verifikasi akun UMKMedia`,
         // html: `<a href="${resetLink}">${resetLink}</a>`,
         html: tempResult,
       };

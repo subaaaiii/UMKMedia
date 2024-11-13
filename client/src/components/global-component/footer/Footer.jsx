@@ -89,7 +89,7 @@ function Footer() {
                 <h1 className="text-[16px] lg:text-[20px] font-bold leading-[28px] text-whiteSmoke500">
                   Hubungi Growlab
                 </h1>
-                <a href="mailto:officialgrowlab.id@gmail.com">
+                <a href="mailto:officialumkmedia@gmail.com">
                   <div className="flex justify-start items-center gap-[8px]">
                     <img
                       src={icon.mail}
@@ -97,7 +97,7 @@ function Footer() {
                       className="w-[20px] h-[20px]"
                     />
                     <p className="text-[14px] lg:text-[19px] font-normal leading-[28px] text-whiteSmoke600">
-                      officialgrowlab.id@gmail.com
+                    officialumkmedia@gmail.com
                     </p>
                   </div>
                 </a>
@@ -146,7 +146,7 @@ function Footer() {
           />
           <div className="max-w-[388px] lg:max-w-none ">
             <h1 className="text-[14px] lg:text-[16px] flex flex-col lg:flex-row  font-medium leading-[20px] lg:leading-[24px] text-whiteSmoke600">
-              2023 Growlab | PT. Growlab Digital Solution.{" "}
+              2024 UMKMedia | PT. UMKMedia Digital Solution.{" "}
               <span> All right reserved</span>
             </h1>
           </div>
