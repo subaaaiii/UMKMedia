@@ -40,8 +40,10 @@ import avatar2 from "../assets/images/avatar2.svg";
 import approvalimage from "../assets/images/approval.png";
 import BCA from "../assets/images/bca.png";
 import SUCCESS from "../assets/images/success.png";
+import certificate from "../assets/images/certificate.png";
 
 const images = {
+  certificate,
   vector2,
   rectangle104,
   socialMediaManagement,

@@ -38,20 +38,9 @@ export default function KelasCard(kelas) {
           </h1>
         </div>
         <div className="py-[4px] w-fit sm:w-full lg:w-[424px]">
-          {/* <div className="flex flex-row justify-between"> */}
           <h1 className="hidden lg:block font-medium text-[14px] lg:text-[24px] leading-[20px] lg:leading-[28px] text-black500 w-[234px] lg:w-[300px] h-[56px] flex-shrink-0 mb-[43px]">
             {kelas.kelas.nama || "No Data"}
           </h1>
-          {/* <div className="flex items-center justify-center w-100 lg:w-fit h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px]">
-              <Link
-                to={`/kelas-bisnis/${kelas.kelas.id}`}
-                className="font-medium text-[11px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-[#0F1011]"
-              >
-                Lihat Kelas
-              </Link>
-            </div>
-          </div> */}
-
           <div className="flex items-center justify-center lg:justify-start">
             <Progress
               className="w-[311px] h-[8px] lg:w-[372px] lg:h-[14px] sm:w-full"
@@ -67,15 +56,28 @@ export default function KelasCard(kelas) {
             {kelas.kelas.total_materi || "No Data"} Submateri
           </p>
         </div>
-        <div className="flex items-center justify-center w-100 lg:w-fit h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px]">
-          <Link
-            to={`/tentang-kelas/${kelas.kelas.id}`}
-            className="font-medium text-[11px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-[#0F1011]"
-          >
-            Lihat Kelas
-          </Link>
+        <div className="flex flex-col items-center">
+          <div className="flex items-center justify-center w-100 lg:w-fit h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2">
+            <Link
+              to={`/tentang-kelas/${kelas.kelas.id}`}
+              className="font-medium text-[11px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-[#0F1011]"
+            >
+              Lihat Kelas
+            </Link>
+          </div>
+          <div className="flex items-center justify-center w-100 lg:w-fit h-fit p-[10px] px-[18px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2">
+            {/* Tombol Sertifikat */}
+            {kelas.kelas.persentase == 100 && (
+              <button
+                onClick={() => alert("Download Sertifikat!")}
+                className="font-medium text-[11px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-[#0F1011]"
+              >Sertifikat
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </ChakraProvider>
   );
 }
+

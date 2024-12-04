@@ -37,6 +37,7 @@ import Checkout from "../pages/checkout/Checkout";
 import Approval from "../pages/checkout-approval/Approval";
 import Success from "../pages/success-checkout/Success";
 import FreeCheckout from "../pages/checkout-free/FreeCheckout";
+import Certificate from "../pages/certificate/Certificate";
 
 import ChangePassword from "../pages/change-password/ChangePassword";
 import InfoLain from "../pages/info-lain/InfoLain";
@@ -70,6 +71,15 @@ import FormAdmin from "../pages/admin-list-admin/FormAdmin";
 import EditAdmin from "../pages/admin-list-admin/EditAdmin";
 
 const routes = [
+  <Route
+    key="certificate"
+    path="/certificate"
+    element={
+      <Protection publicSide={true}>
+        <Certificate />
+      </Protection>
+    }
+  />,
   <Route
     key="home"
     path="/"
