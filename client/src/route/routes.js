@@ -75,7 +75,7 @@ const routes = [
     key="certificate"
     path="/certificate"
     element={
-      <Protection publicSide={true}>
+      <Protection publicSide={true} userOnly={true}>
         <Certificate />
       </Protection>
     }

@@ -5,22 +5,28 @@ import { images } from "../../../../constants";
 import { Spinner } from "@chakra-ui/react";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
 
-const theme = extendTheme({
-  components: {
-    Progress: {
-      baseStyle: {
-        filledTrack: {
-          bg: "#184C7B",
-        },
-        track: {
-          bg: "#66666633",
+export default function KelasCard(kelas, data) {
+  const navigate = useNavigate();
+
+  const theme = extendTheme({
+    components: {
+      Progress: {
+        baseStyle: {
+          filledTrack: {
+            bg: "#184C7B",
+          },
+          track: {
+            bg: "#66666633",
+          },
         },
       },
     },
-  },
-});
+  });
 
-export default function KelasCard(kelas) {
+  const handleCertificate = () => {
+    navigate("/certificate", { state: { kelasName: kelas.kelas.nama , nama: data.nama_lengkap} });
+  };
+
   return (
     <ChakraProvider theme={theme}>
       <div className="flex flex-col px-[11px] lg:px-0 lg:flex-row w-[358px] h-[216px] sm:w-[500px] lg:w-[761px] lg:h-[228px] flex-shrink pt-[17px] border rounded-[10px] border-[rgba(102,102,102,0.2)] mb-[30px] shadow-md shadow-gray-300">
@@ -65,13 +71,14 @@ export default function KelasCard(kelas) {
               Lihat Kelas
             </Link>
           </div>
-          <div className="flex items-center justify-center w-100 lg:w-fit h-fit p-[10px] px-[18px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2">
+          <div className="flex items-center justify-center w-100 lg:w-fit h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2 px-4">
             {/* Tombol Sertifikat */}
             {kelas.kelas.persentase == 100 && (
               <button
-                onClick={() => alert("Download Sertifikat!")}
+                onClick={handleCertificate}
                 className="font-medium text-[11px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-[#0F1011]"
-              >Sertifikat
+              >
+                Sertifikat
               </button>
             )}
           </div>
