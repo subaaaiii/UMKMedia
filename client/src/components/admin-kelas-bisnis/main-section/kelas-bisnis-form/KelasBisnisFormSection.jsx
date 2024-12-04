@@ -30,6 +30,7 @@ function KelasBisnisFormSection({ id }) {
     deskripsiPemateri: "",
     linkFotoPemateri: "",
     deskripsi: "",
+    tugas: "",
     materis: [
       {
         materi: "",
@@ -162,6 +163,7 @@ function KelasBisnisFormSection({ id }) {
             imageMentor: resData.kelas_mentors[0].image,
             linkFotoPemateri: resData.kelas_mentors[0].images_link,
             deskripsi: resData.deskripsi,
+            tugas: resData.tugas,
             materis: resData.kelas_materis.map((kelas_materi) => {
               return { ...kelas_materi };
             }),
@@ -183,6 +185,7 @@ function KelasBisnisFormSection({ id }) {
     setValue("perusahaan", kelasBisnisDetail.perusahaan);
     setValue("deskripsiPemateri", kelasBisnisDetail.deskripsiPemateri);
     setValue("deskripsi", kelasBisnisDetail.deskripsi);
+    setValue("tugas", kelasBisnisDetail.tugas);
     kelasBisnisDetail.materis.forEach((materi, index) => {
       setValue(`materis[${index}].materi`, materi.materi);
       setValue(`materis[${index}].link`, materi.link);
@@ -280,6 +283,7 @@ function KelasBisnisFormSection({ id }) {
     formData.append("perusahaan", data.perusahaan);
     formData.append("deskripsiPemateri", data.deskripsiPemateri);
     formData.append("deskripsi", data.deskripsi);
+    formData.append("tugas", data.tugas);
     data.materis.forEach((data, index) => {
       formData.append(`materis[${index}].materi`, data.materi);
       formData.append(`materis[${index}].link`, data.link);
@@ -329,6 +333,7 @@ function KelasBisnisFormSection({ id }) {
     formData.append("perusahaan", data.perusahaan);
     formData.append("deskripsiPemateri", data.deskripsiPemateri);
     formData.append("deskripsi", data.deskripsi);
+    formData.append("tugas", data.tugas);
     data.materis.forEach((data, index) => {
       formData.append(`materis[${index}].materi`, data.materi || "");
       formData.append(`materis[${index}].link`, data.link || "");
@@ -601,6 +606,18 @@ function KelasBisnisFormSection({ id }) {
           />
           {errors.deskripsi && (
             <p className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]">{`${errors.deskripsi.message}`}</p>
+          )}
+        </div>
+        <div className="my-4">
+          <p className="font-bold">Tugas Kelas</p>
+          <textarea
+            name="tugas"
+            {...register("tugas")}
+            className="resize-none my-2 w-1/2 min-w-[256px] h-24 px-2 py-2 bg-transparent border border-gray-400 rounded-md"
+            disabled={id && !isEditing}
+          />
+          {errors.tugas && (
+            <p className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]">{`${errors.tugas.message}`}</p>
           )}
         </div>
         <div className="my-4">

@@ -34,10 +34,7 @@ const dataLayanan = [
     deskripsi:
       "Bangun identitas kuat untuk bisnismu dengan layanan Desain Logo Brand kami. Tim kreatif kami akan menciptakan logo yang unik dan menggambarkan essensi brandmu secara visual",
   },
-  {
-    title: "Live Streaming & Content",
-    navi: "#",
-  },
+
 ];
 
 const dataKomunitas = [

@@ -16,7 +16,7 @@ function ClientSection() {
         data-aos-duration="1000"
       >
         Kami dipercaya oleh{" "}
-        <span className="font-bold text-indigoDye500"> 500+</span> UMKM dalam
+        <span className="font-bold text-indigoDye500"> 400+</span> UMKM dalam
         mencapai kesuksesan mereka
       </h1>
       <div className=" max-w-full 2xl:max-w-[1080px] overflow-hidden   ">

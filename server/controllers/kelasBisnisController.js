@@ -240,7 +240,7 @@ module.exports = {
         where: {
           ...(id ? { id: id } : {}),
         },
-        attributes: ["id", "deskripsi", "id_kelas_bisnis"],
+        attributes: ["id", "deskripsi", "id_kelas_bisnis", "tugas"],
         include: [
           {
             model: kelas_materi,
@@ -458,6 +458,7 @@ module.exports = {
         perusahaan,
         deskripsiPemateri,
         deskripsi,
+        tugas,
         kelasKategori,
       } = req.body;
       let linkBanner = null;
@@ -480,7 +481,7 @@ module.exports = {
       });
 
       const newKelasDetail = await kelas_detail.create({
-        deskripsi,
+        deskripsi,tugas,
         id: newKelasBisnis.id,
         id_kelas_bisnis: newKelasBisnis.id,
       });
@@ -583,6 +584,7 @@ module.exports = {
         perusahaan,
         deskripsiPemateri,
         deskripsi,
+        tugas,
         kelasKategori,
       } = req.body;
       let linkBanner = null;
@@ -632,6 +634,7 @@ module.exports = {
       await kelas_detail.update(
         {
           deskripsi: deskripsi,
+          tugas:tugas
         },
         {
           where: {

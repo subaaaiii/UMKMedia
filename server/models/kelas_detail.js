@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(10000),
         allowNull: true,
       },
+      tugas: {
+        type: DataTypes.STRING(10000),
+        allowNull: true,
+      },
     },
     {
       sequelize,

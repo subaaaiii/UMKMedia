@@ -13,7 +13,7 @@ module.exports = {
         black100: "#B5B5B5",
         black400: "#3F4041",
         black500: "#0F1011",
-        indigoDye500: "#12517C",
+        indigoDye500: "#65d5e3",
         greenWhatsapp: "#32D951",
         linkedinColor: "#0066C8",
         greyIcon: "#686464",

@@ -18,9 +18,6 @@ function Footer() {
     {
       title: "Desain Logo Brand",
     },
-    {
-      title: "Live Streaming & Content",
-    },
   ]);
 
   const [iconData, setIconData] = useState([
@@ -30,15 +27,15 @@ function Footer() {
     // },
     {
       icon: icon.instagram,
-      url: "https://www.instagram.com/growlab.id/",
+      url: "https://www.instagram.com",
     },
     {
       icon: icon.linkedin,
-      url: "https://www.linkedin.com/company/growlab-id/mycompany",
+      url: "https://www.linkedin.com",
     },
     {
       icon: icon.tiktok,
-      url: "https://www.tiktok.com/@growlabid ",
+      url: "https://www.tiktok.com",
     },
     // {
     //   icon: icon.youtube,
@@ -146,7 +143,7 @@ function Footer() {
           />
           <div className="max-w-[388px] lg:max-w-none ">
             <h1 className="text-[14px] lg:text-[16px] flex flex-col lg:flex-row  font-medium leading-[20px] lg:leading-[24px] text-whiteSmoke600">
-              2024 UMKMedia | PT. UMKMedia Digital Solution.{" "}
+              2024 UMKMedia | {"  "}
               <span> All right reserved</span>
             </h1>
           </div>

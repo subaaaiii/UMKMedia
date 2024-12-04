@@ -9,6 +9,8 @@ import { api } from "../../../api/api";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../lib/firebase/firebase";
 import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+
 import {
   getVerified,
   setToken,
@@ -29,6 +31,10 @@ function Navbar() {
     layanan: false,
     komunitas: false,
   });
+
+  const redirectToDashboard = () => {
+    navigate("/");
+  };
 
   const [dataUser, setDataUser] = useState(null);
   const [isActive, setIsActive] = useState("home");
@@ -208,6 +214,14 @@ function Navbar() {
     dispatch(setUser(null));
     dispatch(setToken(null));
     setTOggleProfile(false);
+    redirectToDashboard();
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Logout berhasil",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   const setNavbarActive = useMemo(() => {
