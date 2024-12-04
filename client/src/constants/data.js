@@ -92,12 +92,6 @@ const dataService = [
       "Penyedia layanan pembuatan desain konten hingga logo usaha",
     pic: images.desainLogo,
   },
-  {
-    title: "Live Streaming & Content",
-    deskripsi:
-      "Penyedia layanan host live dan creator talent",
-    pic: images.liveStreamingDanContent,
-  },
 ];
 
 const navigationData = [

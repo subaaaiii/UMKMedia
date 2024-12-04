@@ -12,7 +12,7 @@ function ServiceSection() {
   }, []);
 
   return (
-    <div className=" flex flex-col  bg-serviceSection w-full 2xl:max-w-[1280px]  bg-cover h-full xl:h-[1448px] items-center relative    xl:overflow-y-visible">
+    <div className=" flex flex-col  bg-serviceSection w-full 2xl:max-w-[1280px]  bg-cover h-full xl:h-[1000px] items-center relative xl:overflow-y-visible p-5">
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
@@ -26,8 +26,9 @@ function ServiceSection() {
           kesuksesan dalam bisnis kamu
         </p>
       </div>
+      
       <div className="w-fit flex justify-center">
-        <div className="w-full xl:w-[1080px]  mb-[100px]  grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-y-[52px] gap-x-[24px]">
+        <div className="w-[600px] lg:w-[900px] xl:w-[1150px] flex flex-wrap justify-between">
           {data?.dataService?.map((service, index) => (
             <ServiceCard
               key={index}

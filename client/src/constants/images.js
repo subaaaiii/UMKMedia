@@ -40,9 +40,11 @@ import avatar2 from "../assets/images/avatar2.svg";
 import approvalimage from "../assets/images/approval.png";
 import BCA from "../assets/images/bca.png";
 import SUCCESS from "../assets/images/success.png";
+import certificate from "../assets/images/certificate.png";
 import orang from "../assets/images/orang.png"
 
 const images = {
+  certificate,
   orang,
   vector2,
   rectangle104,
