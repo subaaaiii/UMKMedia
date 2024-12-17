@@ -63,9 +63,6 @@ function TentangKelas() {
         deskripsi={deskripsi}
       />
       <MainMateri kelas={kelas} progress={progress} />
-      <Link to={`/tugas/${id}`}>  
-                <ButtonBlack500 WIDTH={"w-[320px]"} HEIGHT={"h-[56px]"} TEXT_BUTTON={"Mulai Belajar"} />
-      </Link>
       <UlasanSection ulasan={ulasan} />
     </div>
   );
