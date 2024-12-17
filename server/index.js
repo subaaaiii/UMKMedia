@@ -31,6 +31,7 @@ const { kelasWishlistRouters } = require("./routers");
 const { testingRouter } = require("./routers");
 const { kelasTransaksiRouters } = require("./routers");
 const { cmsAuthRouters } = require("./routers");
+const { kelasSubmissionRouters } = require("./routers");
 const { authorize } = require("./middleware/validator");
 
 app.use("/api/cms", cmsAuthRouters);
@@ -41,6 +42,7 @@ app.use("/api/userKelas", userKelasRouters);
 app.use("/api/artikel", artikelRouters);
 app.use("/api/lowongan", lowonganRouters);
 app.use("/api/kelasBisnis", kelasBisnisRouters);
+app.use("/api/kelasSubmission", kelasSubmissionRouters);
 app.use("/api/kelasWishlist", kelasWishlistRouters);
 app.use("/api/testing", testingRouter);
 app.use("/api/kelasTransaksi", kelasTransaksiRouters);

@@ -7,6 +7,7 @@ const kelasBisnisController = require("./kelasBisnisController");
 const userKelasController = require("./userKelasController");
 const testingController = require("./testingControllesrs");
 const cmsAuthController = require('./cmsAuthController')
+const kelasSubmissionController = require('./kelasSubmissionController')
 
 module.exports = {
   loginController,
@@ -17,4 +18,5 @@ module.exports = {
   userKelasController,
   testingController,
   cmsAuthController,
+  kelasSubmissionController
 };

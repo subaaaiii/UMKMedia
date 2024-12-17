@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.user_pribadi, { foreignKey: { name: "id_user" } });
       User.hasOne(models.kelas_rating, { foreignKey: { name: "id_user" } });
       User.hasMany(models.kelas_wishlist, { foreignKey: { name: "id_user" } });
+      User.hasMany(models.kelas_submission, { foreignKey: { name: "id_user" } });
     }
   }
   User.init(

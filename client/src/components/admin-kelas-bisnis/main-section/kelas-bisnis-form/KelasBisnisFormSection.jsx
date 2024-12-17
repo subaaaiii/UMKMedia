@@ -30,7 +30,8 @@ function KelasBisnisFormSection({ id }) {
     deskripsiPemateri: "",
     linkFotoPemateri: "",
     deskripsi: "",
-    tugas: "",
+    judul_tugas: "",
+    deskripsi_tugas: "",
     materis: [
       {
         materi: "",
@@ -100,7 +101,7 @@ function KelasBisnisFormSection({ id }) {
   function showError(message) {
     Swal.fire({
       title: "Error",
-      text: message || "Internal Server Error!",
+      text: message || "disini",
       icon: "error",
       confirmButtonColor: "#0F1011",
     });
@@ -117,8 +118,8 @@ function KelasBisnisFormSection({ id }) {
           }))
         );
       })
-      .catch(() => {
-        showError();
+      .catch((err) => {
+        showError(err);
       });
   }, []);
 
@@ -133,8 +134,8 @@ function KelasBisnisFormSection({ id }) {
           }))
         );
       })
-      .catch(() => {
-        showError();
+      .catch((err) => {
+        showError(err);
       });
   }, []);
 
@@ -163,14 +164,15 @@ function KelasBisnisFormSection({ id }) {
             imageMentor: resData.kelas_mentors[0].image,
             linkFotoPemateri: resData.kelas_mentors[0].images_link,
             deskripsi: resData.deskripsi,
-            tugas: resData.tugas,
+            judul_tugas: resData.kelas_tugas[0].judul,
+            deskripsi_tugas: resData.kelas_tugas[0].deskripsi,
             materis: resData.kelas_materis.map((kelas_materi) => {
               return { ...kelas_materi };
             }),
           });
         })
-        .catch(() => {
-        showError();
+        .catch((err) => {
+        showError(err);
         });
     }
   }, [id]);
@@ -185,7 +187,8 @@ function KelasBisnisFormSection({ id }) {
     setValue("perusahaan", kelasBisnisDetail.perusahaan);
     setValue("deskripsiPemateri", kelasBisnisDetail.deskripsiPemateri);
     setValue("deskripsi", kelasBisnisDetail.deskripsi);
-    setValue("tugas", kelasBisnisDetail.tugas);
+    setValue("judul_tugas", kelasBisnisDetail.judul_tugas);
+    setValue("deskripsi_tugas", kelasBisnisDetail.deskripsi_tugas);
     kelasBisnisDetail.materis.forEach((materi, index) => {
       setValue(`materis[${index}].materi`, materi.materi);
       setValue(`materis[${index}].link`, materi.link);
@@ -283,7 +286,8 @@ function KelasBisnisFormSection({ id }) {
     formData.append("perusahaan", data.perusahaan);
     formData.append("deskripsiPemateri", data.deskripsiPemateri);
     formData.append("deskripsi", data.deskripsi);
-    formData.append("tugas", data.tugas);
+    formData.append("judul_tugas", data.judul_tugas);
+    formData.append("deskripsi_tugas", data.deskripsi_tugas);
     data.materis.forEach((data, index) => {
       formData.append(`materis[${index}].materi`, data.materi);
       formData.append(`materis[${index}].link`, data.link);
@@ -333,7 +337,8 @@ function KelasBisnisFormSection({ id }) {
     formData.append("perusahaan", data.perusahaan);
     formData.append("deskripsiPemateri", data.deskripsiPemateri);
     formData.append("deskripsi", data.deskripsi);
-    formData.append("tugas", data.tugas);
+    formData.append("judul_tugas", data.judul_tugas);
+    formData.append("deskripsi_tugas", data.deskripsi_tugas);
     data.materis.forEach((data, index) => {
       formData.append(`materis[${index}].materi`, data.materi || "");
       formData.append(`materis[${index}].link`, data.link || "");
@@ -608,18 +613,7 @@ function KelasBisnisFormSection({ id }) {
             <p className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]">{`${errors.deskripsi.message}`}</p>
           )}
         </div>
-        <div className="my-4">
-          <p className="font-bold">Tugas Kelas</p>
-          <textarea
-            name="tugas"
-            {...register("tugas")}
-            className="resize-none my-2 w-1/2 min-w-[256px] h-24 px-2 py-2 bg-transparent border border-gray-400 rounded-md"
-            disabled={id && !isEditing}
-          />
-          {errors.tugas && (
-            <p className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]">{`${errors.tugas.message}`}</p>
-          )}
-        </div>
+        
         <div className="my-4">
           <p className="font-bold">Nama Pemateri</p>
           <input
@@ -815,6 +809,31 @@ function KelasBisnisFormSection({ id }) {
               </p>
             )
           ))}
+        </div>
+        <div className="my-4">
+          <p className="font-bold">Judul Tugas</p>
+          <input
+            type="text"
+            name="judul_tugas"
+            {...register("judul_tugas")}
+            className="my-2 w-1/3 min-w-[256px] h-8 px-2 bg-transparent border border-gray-400 rounded-md"
+            disabled={id && !isEditing}
+          />
+          {errors.judul_tugas && (
+            <p className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]">{`${errors.judul_tugas.message}`}</p>
+          )}
+        </div>
+        <div className="my-4">
+          <p className="font-bold">Deskripsi tugas</p>
+          <textarea
+            name="deskripsi_tugas"
+            {...register("deskripsi_tugas")}
+            className="resize-none my-2 w-1/2 min-w-[256px] h-24 px-2 py-2 bg-transparent border border-gray-400 rounded-md"
+            disabled={id && !isEditing}
+          />
+          {errors.deskripsi_tugas && (
+            <p className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]">{`${errors.deskripsi_tugas.message}`}</p>
+          )}
         </div>
         <div
           className={`my-4 w-1/2 min-w-[256px] justify-center flex mb-[80px] ${

@@ -31,7 +31,8 @@ export const kelasBisnisSchema = z.object({
   perusahaan: z.string().min(1, "Perusahaan pemateri harus diisi!"),
   deskripsiPemateri: z.string().max(1000, "deskripsi terlalu panjang, maksimal 1000 karakter").optional(),
   deskripsi: z.string().optional(),
-  tugas: z.string().optional(),
+  judul_tugas: z.string().optional(),
+  deskripsi_tugas: z.string().optional(),
   materis: z.array(materiSchema).optional(),
   linkBanner: z
     .any()

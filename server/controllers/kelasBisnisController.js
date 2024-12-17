@@ -10,6 +10,7 @@ const {
   sub_materi_kelas,
   kelas_transaksi,
   kelas_wishlist,
+  kelas_tugas
 } = require("../models");
 const {
   kelas_bisnis,
@@ -240,11 +241,15 @@ module.exports = {
         where: {
           ...(id ? { id: id } : {}),
         },
-        attributes: ["id", "deskripsi", "id_kelas_bisnis", "tugas"],
+        attributes: ["id", "deskripsi", "id_kelas_bisnis"],
         include: [
           {
             model: kelas_materi,
             attributes: ["materi", "link", "deskripsi"],
+          },
+          {
+            model: kelas_tugas,
+            attributes: ["judul", "deskripsi"],
           },
           {
             model: kelas_benefit,
@@ -458,7 +463,8 @@ module.exports = {
         perusahaan,
         deskripsiPemateri,
         deskripsi,
-        tugas,
+        judul_tugas,
+        deskripsi_tugas,
         kelasKategori,
       } = req.body;
       let linkBanner = null;
@@ -481,7 +487,7 @@ module.exports = {
       });
 
       const newKelasDetail = await kelas_detail.create({
-        deskripsi,tugas,
+        deskripsi,
         id: newKelasBisnis.id,
         id_kelas_bisnis: newKelasBisnis.id,
       });
@@ -492,6 +498,11 @@ module.exports = {
         perusahaan,
         deskripsi : deskripsiPemateri,
         image: linkFotoPemateri,
+      });
+       await kelas_tugas.create({
+        judul : judul_tugas,
+        deskripsi : deskripsi_tugas,
+        id_kelas_detail: newKelasDetail.id,
       });
 
       await kelas_detail_mentor.create({
@@ -575,6 +586,12 @@ module.exports = {
         },
       });
 
+      const kelasTugas = await kelas_tugas.findOne({
+        where: {
+          id_kelas_detail: id,
+        },
+      });
+
       let {
         nama,
         tingkatKesulitan,
@@ -584,7 +601,8 @@ module.exports = {
         perusahaan,
         deskripsiPemateri,
         deskripsi,
-        tugas,
+        judul_tugas,
+        deskripsi_tugas,
         kelasKategori,
       } = req.body;
       let linkBanner = null;
@@ -630,11 +648,21 @@ module.exports = {
         }
       );
 
+      await kelas_tugas.update({
+        judul : judul_tugas,
+        deskripsi : deskripsi_tugas,
+      },
+      {
+        where: {
+          id: kelasTugas.id,
+        },
+      }
+    );
+
       // Update kelas detail
       await kelas_detail.update(
         {
           deskripsi: deskripsi,
-          tugas:tugas
         },
         {
           where: {

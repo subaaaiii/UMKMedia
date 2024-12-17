@@ -8,6 +8,7 @@ const kelasWishlistRouters = require("./kelasWishlistRouters");
 const testingRouter = require("./testingRouters");
 const kelasTransaksiRouters = require("./kelasTransaksiRouters");
 const cmsAuthRouters = require('./cmsAuthRouters')
+const kelasSubmissionRouters = require('./kelasSubmissionRouters')
 
 module.exports = {
   loginRouters,
@@ -20,4 +21,5 @@ module.exports = {
   kelasTransaksiRouters,
   testingRouter,
   cmsAuthRouters,
+  kelasSubmissionRouters
 };

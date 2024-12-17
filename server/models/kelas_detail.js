@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "id_kelas_bisnis",
       });
       kelas_detail.hasMany(models.kelas_materi, {foreignKey: {name: "id_kelas_detail"}});
-      kelas_detail.hasMany(models.kelas_kuis, {foreignKey: {name: "id_kelas_detail"}});
+      kelas_detail.hasMany(models.kelas_tugas, {foreignKey: {name: "id_kelas_detail"}});
+      kelas_detail.hasMany(models.kelas_submission, {foreignKey: {name: "id_kelas_detail"}});
 
     }
   }

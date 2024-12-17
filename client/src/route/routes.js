@@ -42,6 +42,7 @@ import Certificate from "../pages/certificate/Certificate";
 import ChangePassword from "../pages/change-password/ChangePassword";
 import InfoLain from "../pages/info-lain/InfoLain";
 import TentangKelas from "../pages/tentang-kelas/TentangKelas";
+import Tugas from "../pages/tugas/Tugas";
 import LmsKelas from "../pages/lms-kelas/LmsKelas";
 import Verifikasi from "../pages/verifikasi/Verifikasi";
 import ResetPassword from "../pages/reset-password/ResetPassword";
@@ -381,6 +382,15 @@ const routes = [
     element={
       <Protection userOnly={true}>
         <TentangKelas />
+      </Protection>
+    }
+  />,
+  <Route
+    key="tugas"
+    path="/tugas/:id"
+    element={
+      <Protection userOnly={true}>
+        <Tugas />
       </Protection>
     }
   />,

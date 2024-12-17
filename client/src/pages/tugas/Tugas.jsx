@@ -4,8 +4,6 @@ import MainMateri from "../../components/tentang-kelas/main-materi/MainMateri";
 import UlasanSection from "../../components/tentang-kelas/ulasan-section/UlasanSection";
 import { api } from "../../api/api";
 import { useParams } from "react-router-dom";
-import ButtonBlack500 from "../../components/global-component/button/button-black500/ButtonBlack500";
-import { Link, useLocation  } from "react-router-dom";
 
 function TentangKelas() {
   const [kelas, setKelas] = useState([]);
@@ -15,7 +13,31 @@ function TentangKelas() {
   const [title, setTitle] = useState("");
   const [progress, setProgress] = useState(0);
   const { id } = useParams();
-
+  const defaultValues = {
+    nama: "",
+    tingkatKesulitan: "",
+    kelasKategori: "",
+    harga: "0",
+    imageBanner: "",
+    linkBanner: "",
+    imageMentor: "",
+    namaPemateri: "",
+    jabatan: "",
+    perusahaan: "",
+    deskripsiPemateri: "",
+    linkFotoPemateri: "",
+    deskripsi: "",
+    judul_tugas: "",
+    deskripsi_tugas: "",
+    materis: [
+      {
+        materi: "",
+        link: "",
+        deskripsi: "",
+      },
+    ],
+  };
+  const [kelasBisnisDetail, setKelasBisnisDetail] = useState(defaultValues);
   const abortControllerRef = useRef(null);
 
   const fetchKelasUser = async () => {
@@ -55,18 +77,30 @@ function TentangKelas() {
     fetchKelasUser();
   }, []);
 
+  useEffect(() => {
+    if (id) {
+      const data = {
+        id: id,
+      };
+      api
+        .post(`${process.env.REACT_APP_API_BASE_URL}/kelasBisnis/detail`, data)
+        .then((res) => {
+          const resData = res.data[0];
+          setKelasBisnisDetail({
+            judul_tugas: resData.kelas_tugas[0].judul,
+            deskripsi_tugas: resData.kelas_tugas[0].deskripsi,
+          });
+        })
+        .catch((err) => {
+        
+        });
+    }
+  }, [id]);
+
   return (
     <div className="flex flex-col justify-center items-center shrink-0">
-      <HeadSection
-        imageKelas={imageKelas}
-        kelas={kelas}
-        deskripsi={deskripsi}
-      />
-      <MainMateri kelas={kelas} progress={progress} />
-      <Link to={`/tugas/${id}`}>  
-                <ButtonBlack500 WIDTH={"w-[320px]"} HEIGHT={"h-[56px]"} TEXT_BUTTON={"Mulai Belajar"} />
-      </Link>
-      <UlasanSection ulasan={ulasan} />
+      judul :{kelasBisnisDetail.judul_tugas}
+      deskripsi :{kelasBisnisDetail.deskripsi_tugas}
     </div>
   );
 }
