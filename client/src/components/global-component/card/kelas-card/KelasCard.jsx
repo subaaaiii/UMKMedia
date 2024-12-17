@@ -80,7 +80,7 @@ export default function KelasCard(kelas, data) {
           </div>
           <div className="flex items-center justify-center w-32 h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2 px-4">
             <Link
-              to={`/tugas`}
+              to={`/tugas/${kelas.kelas.id}`}
               className="font-medium text-md leading-[24px] lg:leading-[28px] font-[#0F1011]"
             >
               Lihat Tugas

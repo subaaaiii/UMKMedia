@@ -84,7 +84,7 @@ const routes = [
   />,
   <Route
     key="tugas"
-    path="/tugas"
+    path="/tugas/:id"
     element={
       <Protection publicSide={true} userOnly={true}>
         <TugasSoal />
