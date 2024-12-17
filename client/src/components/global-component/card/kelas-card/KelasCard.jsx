@@ -24,13 +24,13 @@ export default function KelasCard(kelas, data) {
   });
 
   const handleCertificate = () => {
-    navigate("/certificate", { state: { kelasName: kelas.kelas.nama , nama: data.nama_lengkap} });
+    navigate("/certificate", { state: { kelasName: kelas.kelas.nama } });
   };
 
   return (
     <ChakraProvider theme={theme}>
-      <div className="flex flex-col px-[11px] lg:px-0 lg:flex-row w-[358px] h-[216px] sm:w-[500px] lg:w-[761px] lg:h-[228px] flex-shrink pt-[17px] border rounded-[10px] border-[rgba(102,102,102,0.2)] mb-[30px] shadow-md shadow-gray-300">
-        <div className="flex w-[78px] h-[78px] lg:w-[150px] lg:h-[150px] lg:ml-[11px] lg:mr-[28px]">
+      <div className="flex flex-col px-[11px] lg:px-2 lg:flex-row w-[358px] h-[216px] sm:w-[500px] lg:w-[761px] lg:h-[228px] flex-shrink pt-[17px] border rounded-[10px] border-[rgba(102,102,102,0.2)] mb-[30px] shadow-md shadow-gray-300">
+        <div className="flex w-[78px] h-[78px] lg:w-[150px] lg:h-[150px] lg:ml-[2px] lg:mr-[28px]">
           <img
             src={
               `${process.env.REACT_APP_SERVER_URL}images/kelas/${kelas.kelas.image}` ||
@@ -61,27 +61,42 @@ export default function KelasCard(kelas, data) {
             {kelas.kelas.kelas_regists[0].progress} /{" "}
             {kelas.kelas.total_materi || "No Data"} Submateri
           </p>
+          {/* <p className="text-[11px] lg:text-[18px] font-normal leading-[28px] text-black">
+            {kelas.kelas.kelas_regists[0].progress} /{" "}
+            {kelas.kelas.total_materi || "No Data"} Tugas
+          </p> */}
+          <p className="text-[11px] lg:text-[18px] font-normal leading-[28px] text-black">
+            0 / 1 Tugas
+          </p>
         </div>
         <div className="flex flex-col items-center">
-          <div className="flex items-center justify-center w-100 lg:w-fit h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2">
+          <div className="flex items-center justify-center w-32 h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2">
             <Link
               to={`/tentang-kelas/${kelas.kelas.id}`}
-              className="font-medium text-[11px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-[#0F1011]"
+              className="font-medium text-md leading-[24px] lg:leading-[28px] font-[#0F1011]"
             >
               Lihat Kelas
             </Link>
           </div>
-          <div className="flex items-center justify-center w-100 lg:w-fit h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2 px-4">
-            {/* Tombol Sertifikat */}
-            {kelas.kelas.persentase == 100 && (
+          <div className="flex items-center justify-center w-32 h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2 px-4">
+            <Link
+              to={`/tugas`}
+              className="font-medium text-md leading-[24px] lg:leading-[28px] font-[#0F1011]"
+            >
+              Lihat Tugas
+            </Link>
+          </div>
+          {kelas.kelas.persentase == 100 && (
+            <div className="flex items-center justify-center w-32 h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2 px-4">
+
               <button
                 onClick={handleCertificate}
-                className="font-medium text-[11px] lg:text-[18px] leading-[24px] lg:leading-[28px] font-[#0F1011]"
+                className="font-medium text-md leading-[24px] lg:leading-[28px] font-[#0F1011]"
               >
                 Sertifikat
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </ChakraProvider>

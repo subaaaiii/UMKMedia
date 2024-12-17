@@ -39,66 +39,66 @@ function Certificate_user() {
         }
     };
 
-    const getUserData = async (token) => {
-        console.log({ token });
-        try {
-          console.log({
-            path: `${process.env.REACT_APP_API_BASE_URL}/user/one-user`,
-          });
-          const response = await api.get(
-            `${process.env.REACT_APP_API_BASE_URL}/user/one-user`,
-            {
-              headers: {
-                Authorization: token,
-                Accept: "application/json",
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          setDataUser(response.data.data);
-          dispatch(setUser(response.data.data));
-          dispatch(getVerified(response.data.data.verified));
-          localStorage.setItem(
-            "verified",
-            JSON.stringify(response.data.data.verified)
-          );
+    // const getUserData = async (token) => {
+    //     console.log({ token });
+    //     try {
+    //       console.log({
+    //         path: `${process.env.REACT_APP_API_BASE_URL}/user/one-user`,
+    //       });
+    //       const response = await api.get(
+    //         `${process.env.REACT_APP_API_BASE_URL}/user/one-user`,
+    //         {
+    //           headers: {
+    //             Authorization: token,
+    //             Accept: "application/json",
+    //             "Content-Type": "application/json",
+    //           },
+    //         }
+    //       );
+    //       setDataUser(response.data.data);
+    //       dispatch(setUser(response.data.data));
+    //       dispatch(getVerified(response.data.data.verified));
+    //       localStorage.setItem(
+    //         "verified",
+    //         JSON.stringify(response.data.data.verified)
+    //       );
     
-          console.log(response);
-        } catch (error) {
-          localStorage.removeItem("auth");
-          dispatch(setUser(null));
-          dispatch(setToken(null));
-          signOut(auth);
-          setDataUser(null);
+    //       console.log(response);
+    //     } catch (error) {
+    //       localStorage.removeItem("auth");
+    //       dispatch(setUser(null));
+    //       dispatch(setToken(null));
+    //       signOut(auth);
+    //       setDataUser(null);
     
-          console.log(error);
-        }
-      };
+    //       console.log(error);
+    //     }
+    //   };
 
 
     useEffect(() => {
         fetchKelas();
     }, []);
 
-    console.log("Data user: ", user)
+    // console.log("Data user: ", user)
 
-    useEffect(() => {
-        if (JSON.parse(localStorage.getItem("auth"))) {
-          dispatch(setToken(JSON.parse(localStorage.getItem("auth"))));
-          getUserData(JSON.parse(localStorage.getItem("auth")));
-          console.log("jalan");
-        } else {
-          localStorage.removeItem("auth");
-          setDataUser(null);
-        }
+    // useEffect(() => {
+    //     if (JSON.parse(localStorage.getItem("auth"))) {
+    //       dispatch(setToken(JSON.parse(localStorage.getItem("auth"))));
+    //       getUserData(JSON.parse(localStorage.getItem("auth")));
+    //       console.log("jalan");
+    //     } else {
+    //       localStorage.removeItem("auth");
+    //       setDataUser(null);
+    //     }
     
-        if (JSON.parse(localStorage.getItem("verified"))) {
-          dispatch(getVerified(JSON.parse(localStorage.getItem("verified"))));
-        } else {
-          localStorage.removeItem("verified");
-        }
-        console.log({ token });
-      }, [token, verified]);
+    //     if (JSON.parse(localStorage.getItem("verified"))) {
+    //       dispatch(getVerified(JSON.parse(localStorage.getItem("verified"))));
+    //     } else {
+    //       localStorage.removeItem("verified");
+    //     }
+    //     console.log({ token });
+    //   }, [token, verified]);
 
     return (
         <div className="flex flex-col justify-center items-center shrink-0">
