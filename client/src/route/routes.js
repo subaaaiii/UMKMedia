@@ -41,6 +41,8 @@ import Certificate from "../pages/certificate/Certificate";
 
 import ChangePassword from "../pages/change-password/ChangePassword";
 import InfoLain from "../pages/info-lain/InfoLain";
+import TugasSubmit from "../pages/tugas-kelas/TugasForm";
+import TugasSoal from "../pages/tugas-kelas/Tugas"
 import TentangKelas from "../pages/tentang-kelas/TentangKelas";
 import Tugas from "../pages/tugas/Tugas";
 import LmsKelas from "../pages/lms-kelas/LmsKelas";
@@ -76,8 +78,26 @@ const routes = [
     key="certificate"
     path="/certificate"
     element={
-      <Protection publicSide={true}>
+      <Protection publicSide={true} userOnly={true}>
         <Certificate />
+      </Protection>
+    }
+  />,
+  <Route
+    key="tugas"
+    path="/tugas"
+    element={
+      <Protection publicSide={true} userOnly={true}>
+        <TugasSoal />
+      </Protection>
+    }
+  />,
+  <Route
+    key="tugas-pengumpulan"
+    path="/tugas-submit"
+    element={
+      <Protection publicSide={true} userOnly={true}>
+        <TugasSubmit />
       </Protection>
     }
   />,
