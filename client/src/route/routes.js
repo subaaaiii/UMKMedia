@@ -50,6 +50,7 @@ import ResetPassword from "../pages/reset-password/ResetPassword";
 import RequestReset from "../pages/request-reset/RequestReset";
 import AdminKelasBisnis from "../pages/admin-kelas-bisnis/AdminKelasBisnis";
 import KelasBisnisForm from "../pages/admin-kelas-bisnis/KelasBisnisForm";
+import KelasBisnisSubmission from "../pages/admin-kelas-bisnis/KelasBisnisSubmission";
 import AdminArtikel from "../pages/admin-artikel/AdminArtikel";
 import ArtikelForm from "../pages/admin-artikel/ArtikelForm";
 import AdminDashboard from "../pages/admin-dashboard/AdminDashboard";
@@ -91,15 +92,15 @@ const routes = [
       </Protection>
     }
   />,
-  <Route
-    key="tugas-pengumpulan"
-    path="/tugas-submit"
-    element={
-      <Protection publicSide={true} userOnly={true}>
-        <TugasSubmit />
-      </Protection>
-    }
-  />,
+  // <Route
+  //   key="tugas-pengumpulan"
+  //   path="/tugas-submit"
+  //   element={
+  //     <Protection publicSide={true} userOnly={true}>
+  //       <TugasSubmit />
+  //     </Protection>
+  //   }
+  // />,
   <Route
     key="home"
     path="/"
@@ -546,6 +547,15 @@ const routes = [
       element={
         <Protect>
           <KelasBisnisForm />
+        </Protect>
+      }
+    />
+    <Route
+      key="admin-kelas-bisnis-submission"
+      path="kelas-bisnis/submission/:id"
+      element={
+        <Protect>
+          <KelasBisnisSubmission />
         </Protect>
       }
     />

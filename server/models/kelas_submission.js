@@ -4,8 +4,6 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class kelas_submission extends Model {
-    
-     
     static associate(models) {
       kelas_submission.belongsTo(models.kelas_detail, {foreignKey: "id_kelas_detail"});
       kelas_submission.belongsTo(models.User, {foreignKey: "id_user"});

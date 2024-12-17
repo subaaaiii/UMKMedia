@@ -57,6 +57,7 @@ function MainSection() {
           </Link>
         ))}
       </div>
+      
     </div>
   );
 }

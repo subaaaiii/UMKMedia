@@ -1,4 +1,5 @@
 import { icon } from "../../../../constants";
+import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import AdminHeader from "../../../global-component/admin-header/AdminHeader";
 import { api } from "../../../../api/api";
@@ -172,7 +173,7 @@ function KelasBisnisFormSection({ id }) {
           });
         })
         .catch((err) => {
-        showError(err);
+          showError(err);
         });
     }
   }, [id]);
@@ -193,7 +194,7 @@ function KelasBisnisFormSection({ id }) {
       setValue(`materis[${index}].materi`, materi.materi);
       setValue(`materis[${index}].link`, materi.link);
       setValue(`materis[${index}].deskripsi`, materi.deskripsi);
-    });    
+    });
     setBannerImage(kelasBisnisDetail.linkBanner);
     setPemateriImage(kelasBisnisDetail.linkFotoPemateri);
     setMaterisForm(kelasBisnisDetail.materis);
@@ -299,12 +300,12 @@ function KelasBisnisFormSection({ id }) {
       setIsSubmiting(true);
       await api.post(
         `${process.env.REACT_APP_API_BASE_URL}/kelasBisnis/postData`,
-        formData,{
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      }
       );
       Swal.fire({
         position: "center",
@@ -349,12 +350,12 @@ function KelasBisnisFormSection({ id }) {
       setIsSubmiting(true);
       await api.patch(
         `${process.env.REACT_APP_API_BASE_URL}/kelasBisnis/postData`,
-        formData,{
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
-          },
-        }
+        formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      }
       );
       Swal.fire({
         position: "center",
@@ -373,7 +374,7 @@ function KelasBisnisFormSection({ id }) {
       saveClickHandler();
     }
   };
-  
+
   function deleteClickHandler() {
     Swal.fire({
       title: "Apakah Anda yakin?",
@@ -389,11 +390,11 @@ function KelasBisnisFormSection({ id }) {
         try {
           setIsSubmiting(true);
           await api.delete(
-            `${process.env.REACT_APP_API_BASE_URL}/kelasBisnis/postData/${id}`,{
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
+            `${process.env.REACT_APP_API_BASE_URL}/kelasBisnis/postData/${id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
           );
           Swal.fire({
             position: "center",
@@ -470,6 +471,30 @@ function KelasBisnisFormSection({ id }) {
                 Hapus Kelas Bisnis
               </p>
             </button>
+          )}
+          {id && (
+            <div className="bg-sky-700 rounded-md">
+              <Link
+                to={`/admin/kelas-bisnis/submission/${id}`}
+                 className="flex justify-center items-center gap-x-2 px-2 py-2 text-white text-md"
+              >
+                Manage Submission
+              </Link>
+            </div>
+            // <button
+            //   type="button"
+            //   className="flex justify-center items-center gap-x-2 px-2 py-2 border border-black rounded-md"
+            //   onClick={deleteClickHandler}
+            // >
+            //   {/* <img
+            //     src={icon.iconDelete}
+            //     alt="delete"
+            //     className="w-3 sm:w-4 aspect-square"
+            //   /> */}
+            //   <p className="text-xs sm:text-base font-bold">
+            //     Manage Submission
+            //   </p>
+            // </button>
           )}
         </div>
         <div className="my-4">
@@ -574,15 +599,14 @@ function KelasBisnisFormSection({ id }) {
           <button
             type="button"
             onClick={uploadBannerClickHandler}
-            className={`flex flex-col justify-center aspect-video mt-2 mb-6 w-1/3 min-w-[192px] border border-gray-400 rounded-md bg-transparent ${
-              !id ? "px-2" : ""
-            }`}
+            className={`flex flex-col justify-center aspect-video mt-2 mb-6 w-1/3 min-w-[192px] border border-gray-400 rounded-md bg-transparent ${!id ? "px-2" : ""
+              }`}
             disabled={id && !isEditing}
           >
             {(!id && !bannerImage) ||
-            (id &&
-              kelasBisnisDetail.imageBanner === null &&
-              bannerImage == null) ? (
+              (id &&
+                kelasBisnisDetail.imageBanner === null &&
+                bannerImage == null) ? (
               <>
                 <img
                   src={icon.iconUpload}
@@ -613,7 +637,7 @@ function KelasBisnisFormSection({ id }) {
             <p className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]">{`${errors.deskripsi.message}`}</p>
           )}
         </div>
-        
+
         <div className="my-4">
           <p className="font-bold">Nama Pemateri</p>
           <input
@@ -676,15 +700,14 @@ function KelasBisnisFormSection({ id }) {
           <button
             type="button"
             onClick={uploadFotoPemateriClickHandler}
-            className={`flex flex-col justify-center aspect-square mt-2 mb-6 w-1/5 min-w-[144px] border border-gray-400 rounded-md bg-transparent ${
-              !id ? "px-2" : ""
-            }`}
+            className={`flex flex-col justify-center aspect-square mt-2 mb-6 w-1/5 min-w-[144px] border border-gray-400 rounded-md bg-transparent ${!id ? "px-2" : ""
+              }`}
             disabled={id && !isEditing}
           >
             {(id &&
               kelasBisnisDetail.imageMentor === null &&
               pemateriImage == null) ||
-            (!id && !pemateriImage) ? (
+              (!id && !pemateriImage) ? (
               <>
                 <img
                   src={icon.iconUpload}
@@ -796,19 +819,19 @@ function KelasBisnisFormSection({ id }) {
                 disabled={id && !isEditing}
               />
             </div>
-            
+
           ))}
           {errors.materis &&
-          errors.materis.map((error, idx) => (
-            error.deskripsi && (
-              <p
-                key={idx}
-                className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]"
-              >
-                {error.deskripsi.message}
-              </p>
-            )
-          ))}
+            errors.materis.map((error, idx) => (
+              error.deskripsi && (
+                <p
+                  key={idx}
+                  className="mt-[4px] text-red-500 text-[12px] md:text-[14px] font-small leading-[10px]"
+                >
+                  {error.deskripsi.message}
+                </p>
+              )
+            ))}
         </div>
         <div className="my-4">
           <p className="font-bold">Judul Tugas</p>
@@ -836,18 +859,17 @@ function KelasBisnisFormSection({ id }) {
           )}
         </div>
         <div
-          className={`my-4 w-1/2 min-w-[256px] justify-center flex mb-[80px] ${
-            id ? "hidden" : "block"
-          }`}
+          className={`my-4 w-1/2 min-w-[256px] justify-center flex mb-[80px] ${id ? "hidden" : "block"
+            }`}
         >
           <button
-              type="submit"
-              disabled={isSubmitting}
-              className="p-[10px] w-[123px] flex justify-center border border-black rounded-[10px] gap-2 text-[18px] font-medium leading-[28px] shrink-0 hover:bg-black hover:text-white"
-            >
-              {isSubmitting ? <Spinner color="black" /> : null}
-              {isSubmitting ? "Loading..." : "Submit"}
-            </button>
+            type="submit"
+            disabled={isSubmitting}
+            className="p-[10px] w-[123px] flex justify-center border border-black rounded-[10px] gap-2 text-[18px] font-medium leading-[28px] shrink-0 hover:bg-black hover:text-white"
+          >
+            {isSubmitting ? <Spinner color="black" /> : null}
+            {isSubmitting ? "Loading..." : "Submit"}
+          </button>
         </div>
       </form>
     </div>

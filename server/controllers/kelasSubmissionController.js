@@ -22,11 +22,12 @@ const {
   user_pribadi,
   kelas_harga,
 } = require("../models");
+const db = require("../models");
 const { Sequelize } = require("sequelize");
 const utility = require("./utility");
 const { Op } = require("sequelize");
 const fs = require("fs");
-const kelas_submission = require("../models/kelas_submission");
+const Kelas_submission = db.kelas_submission
 
 module.exports = {
 
@@ -36,12 +37,69 @@ module.exports = {
       const { id_kelas } = req.body;
       const result = await kelas_submission.findAll({
         where: {
-            id_user: id_user,
-            id_kelas_detail: id_kelas
+          id_user: id_user,
+          id_kelas_detail: id_kelas
         },
         attributes: ["id", "link", "is_accepted"],
       });
 
+      res.json(result);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  },
+
+  updateStatusSubmission: async (req, res) => {
+    try {
+      const { id, is_accepted } = req.body;  // Mendapatkan id submission dan status baru (is_accepted)
+      
+      // Cek apakah id dan is_accepted ada dalam body
+      if (!id || is_accepted === undefined) {
+        return res.status(400).json({ message: "id dan is_accepted harus ada dalam request" });
+      }
+  
+      // Update status berdasarkan id
+      const updatedSubmission = await Kelas_submission.update(
+        { is_accepted },  // Data yang ingin diubah
+        {
+          where: {
+            id,  // Berdasarkan id submission
+          },
+        }
+      );
+  
+      // Jika submission berhasil diperbarui
+      if (updatedSubmission[0] === 1) {
+        return res.json({ success: true, message: "Status berhasil diubah" });
+      } else {
+        return res.status(400).json({ success: false, message: "Status gagal diubah" });
+      }
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "Internal Server Error" });
+    }
+  },
+
+  getAllSubmission: async (req, res) => {
+    try {
+      const result = await Kelas_submission.findAll();
+      res.json(result);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  },
+
+
+  getAllSubmissionByIdKelas: async (req, res) => {
+    try {
+      const { id_kelas_detail } = req.body;
+      const result = await Kelas_submission.findAll({
+        where: {
+          id_kelas_detail: id_kelas_detail, // Menyaring berdasarkan id_kelas_detail
+        },
+      });
       res.json(result);
     } catch (error) {
       console.error(error);
@@ -55,16 +113,17 @@ module.exports = {
       console.log(req.body);
       const {
         id_user,
-        id_kelas,
+        id_kelas_detail,
         link
       } = req.body;
-    
-       await kelas_submission.create({
-        link : link,
-        id_user : id_user,
-        id_kelas_detail: id_kelas,
+      console.log("isinya ", req.body)
+      await Kelas_submission.create({
+        link: link,
+        id_user: id_user,
+        id_kelas_detail: id_kelas_detail,
+        is_accepted: 0
       });
-      
+
       res.status(201).json({
         message: "Berhasil menambahkan submit tugas",
       });
@@ -162,15 +221,15 @@ module.exports = {
       );
 
       await kelas_tugas.update({
-        judul : judul_tugas,
-        deskripsi : deskripsi_tugas,
+        judul: judul_tugas,
+        deskripsi: deskripsi_tugas,
       },
-      {
-        where: {
-          id: kelasTugas.id,
-        },
-      }
-    );
+        {
+          where: {
+            id: kelasTugas.id,
+          },
+        }
+      );
 
       // Update kelas detail
       await kelas_detail.update(
