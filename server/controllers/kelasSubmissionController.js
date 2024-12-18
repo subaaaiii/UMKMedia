@@ -123,7 +123,27 @@ module.exports = {
 
   getAllSubmission: async (req, res) => {
     try {
-      const result = await Kelas_submission.findAll();
+      const result = await Kelas_submission.findAll({
+        order: [
+          ['is_accepted', 'ASC'], // Urutkan berdasarkan is_accepted, 0 akan muncul terlebih dahulu
+          ['updatedAt', 'DESC']    // Kemudian urutkan berdasarkan updatedAt, terbaru terlebih dahulu
+        ],include: [
+          {
+            model: kelas_detail,
+            attributes: ["deskripsi"],
+            include: [
+              {
+                model: kelas_bisnis, // Menyertakan kelas_bisnis dari kelas_detail
+                attributes: ["nama"], // Ganti dengan atribut yang ingin Anda ambil
+              }
+            ]
+          },
+          {
+            model : user,
+            attributes: ["nama_lengkap"]
+          }
+        ]
+      });
       res.json(result);
     } catch (error) {
       console.error(error);
@@ -138,7 +158,22 @@ module.exports = {
       const result = await Kelas_submission.findAll({
         where: {
           id_kelas_detail: id_kelas_detail, // Menyaring berdasarkan id_kelas_detail
-        },
+        },include: [
+          {
+            model: kelas_detail,
+            attributes: ["deskripsi"],
+            include: [
+              {
+                model: kelas_bisnis, // Menyertakan kelas_bisnis dari kelas_detail
+                attributes: ["nama"], // Ganti dengan atribut yang ingin Anda ambil
+              }
+            ]
+          },
+          {
+            model : user,
+            attributes: ["nama_lengkap"]
+          }
+        ]
       });
       res.json(result);
     } catch (error) {

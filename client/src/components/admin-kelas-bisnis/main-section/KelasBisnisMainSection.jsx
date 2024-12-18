@@ -2,6 +2,8 @@ import KelasBisnisCard from "./kelas-bisnis-card/KelasBisnisCarc";
 import AdminHeader from "../../global-component/admin-header/AdminHeader";
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
+import { Link } from "react-router-dom";
+import { BiTask } from "react-icons/bi";
 
 function KelasBisnisMainSection() {
   const [kelasBisniss, setKelasBisniss] = useState([]);
@@ -35,6 +37,18 @@ function KelasBisnisMainSection() {
         searchKey={searchKey}
         searchChangeHandler={searchChangeHandler}
       />
+      <div className="flex justify-end mb-8">
+      <div className="bg-sky-700 rounded-md flex gap-1 items-center p-2">
+                      <Link
+                        to={`/admin/kelas-bisnis/recentsubmission`}
+                         className="flex justify-center items-center gap-x-2 px-2 py-2 text-white text-md"
+                      >
+                        Manage Submission
+                      </Link>
+                      <BiTask className="text-white"/>
+                    </div>
+                
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-4 gap-y-6 justify-items-center">
         <KelasBisnisCard star={0} isTambahKelasBaru />
         {kelasBisniss
