@@ -72,6 +72,8 @@ import RestrictPage from "./RestrictPage";
 import ListAdmin from "../pages/admin-list-admin/ListAdmin";
 import FormAdmin from "../pages/admin-list-admin/FormAdmin";
 import EditAdmin from "../pages/admin-list-admin/EditAdmin";
+import RecentSubmission from "../components/admin-kelas-bisnis/main-section/recent-submission/recentSubmission";
+import RecentSubmissionPage from "../pages/recent-submission/RecentSubmission";
 
 const routes = [
   <Route
@@ -556,6 +558,15 @@ const routes = [
       element={
         <Protect>
           <KelasBisnisSubmission />
+        </Protect>
+      }
+    />
+    <Route
+      key="admin-recent-submission"
+      path="kelas-bisnis/recentsubmission"
+      element={
+        <Protect>
+          <RecentSubmissionPage />
         </Protect>
       }
     />
