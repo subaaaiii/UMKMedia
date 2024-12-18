@@ -5,9 +5,8 @@ import { images } from "../../../../constants";
 import { Spinner } from "@chakra-ui/react";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
 
-export default function KelasCard(kelas, data) {
+export default function KelasCard(kelas, submission) {
   const navigate = useNavigate();
-
   const theme = extendTheme({
     components: {
       Progress: {
@@ -67,6 +66,7 @@ export default function KelasCard(kelas, data) {
           </p> */}
           <p className="text-[11px] lg:text-[18px] font-normal leading-[28px] text-black">
             0 / 1 Tugas
+            statestis {submission.is_accepted}
           </p>
         </div>
         <div className="flex flex-col items-center">
