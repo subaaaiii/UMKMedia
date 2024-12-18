@@ -35,8 +35,8 @@ export default function JoincomunitySection() {
         <a
           href={
             index === 0
-              ? "https://docs.google.com/forms/d/e/1FAIpQLSdtiVnJeZjVb6-tWc_HKKZZvi_ZppZeSYzgRcQCygOL7sp-5w/viewform"
-              : "https://docs.google.com/forms/d/1GBs1hbfjfJTUjLnuBHK4nAaFg0o4npZp2tu-iXOjd9U/edit?sharingaction=ownershiptransfer&ts=64ef08b3"
+              ? "https://forms.gle/4cdyRxMx1xfaWq3UA"
+              : "https://forms.gle/4cdyRxMx1xfaWq3UA"
           }
           target="_blank"
           rel="noreferrer"

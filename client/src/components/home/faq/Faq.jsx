@@ -38,7 +38,7 @@ function Faq() {
       title: "Apakah ada biaya untuk bergabung ke dalam ekosistem UMKMedia?",
       answer:
         "Saat ini untuk bergabung ke dalam ekosistem masih GRATIS, kamu dapat mengisi form pendaftaran disini: ",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLSdtiVnJeZjVb6-tWc_HKKZZvi_ZppZeSYzgRcQCygOL7sp-5w/viewform",
+      link: "https://forms.gle/4cdyRxMx1xfaWq3UA",
     },
   ]);
 

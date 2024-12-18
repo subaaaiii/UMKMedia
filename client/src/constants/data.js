@@ -67,30 +67,35 @@ const dataService = [
     deskripsi:
       "Tersedia puluhan modul pembelajaran yang berisi strategi praktis untuk membantu meningkatkan bisnis anda",
     pic: images.oriKelasBisnis,
+    navi: "/kelas-bisnis",
   },
   {
     title: "Konsultasi Bisnis",
     deskripsi:
       "Mengevaluasi dan merekomendasikan strategi terbaik untuk pengembangan bisnis anda",
     pic: images.konsultasiBisnis,
+    navi: "/konsultasi-bisnis",
   },
   {
     title: "Website & Aplikasi",
     deskripsi:
       "Sebagai penyedia tools dan sarana pengembangan bisnismu melalui strategi digital",
     pic: images.buatWebsiteDanAplikasi,
+    navi: "/buat-website-dan-aplikasi",
   },
   {
     title: "Social Media Management",
     deskripsi:
       "Penyedia layanan all in one solution untuk seluruh social media",
     pic: images.socialMediaManagement,
+    navi: "/social-media-management",
   },
   {
     title: "Desain Grafis",
     deskripsi:
       "Penyedia layanan pembuatan desain konten hingga logo usaha",
     pic: images.desainLogo,
+    navi: "/desain-logo",
   },
 ];
 

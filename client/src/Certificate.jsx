@@ -46,7 +46,7 @@ const Certificate = ({ name, kelas }) => {
                     {name}
                 </div>
                 <div
-                    className="absolute"
+                    className="absolute text-center"
                     style={{
                         top: '59.5%',
                         left: '50%',

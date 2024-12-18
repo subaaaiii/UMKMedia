@@ -1,6 +1,7 @@
 import React from "react";
 
 function ServiceCard({ setOnHover, service, onHover }) {
+  console.log("aaaaaa", service)
   return (
     <div
       onMouseEnter={() => setOnHover(service.title)}
