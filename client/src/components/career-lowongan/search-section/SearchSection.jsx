@@ -46,7 +46,7 @@ function SearchSection({ onSearch }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        Karir
+        {/* Karir */}
       </Link> &nbsp; &gt; <span style={{ color: 'white', marginLeft:'5px' }}>  Semua Lowongan</span>
           </p>
           <div className="flex flex-col lg:my-0 md:p-0 md:h-full py-[110px] w-full h-[420px]">
