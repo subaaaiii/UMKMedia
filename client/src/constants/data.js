@@ -111,11 +111,6 @@ const navigationData = [
     navi: "/artikel/1/Semua",
   },
   {
-    BUTTON_TEXT: "Karir",
-    data: null,
-    navi: "/career",
-  },
-  {
     BUTTON_TEXT: "Tentang Kami",
     data: null,
     navi: "/about-us",
