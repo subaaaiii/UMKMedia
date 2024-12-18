@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { api } from "../../../../api/api";
 import { Progress } from "@chakra-ui/react";
 import { images } from "../../../../constants";
 import { Spinner } from "@chakra-ui/react";
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
 
-export default function KelasCard(kelas, submission) {
+export default function KelasCard(kelas) {
+  const [token, setToken] = useState("");
+  const dataKelas = useState(kelas);
+  const idKelas = dataKelas[0].kelas.id
+  const [submission, setSubmission] = useState([]);
   const navigate = useNavigate();
   const theme = extendTheme({
     components: {
@@ -22,9 +27,58 @@ export default function KelasCard(kelas, submission) {
     },
   });
 
+  const fetchToken = () => {
+    try {
+      const storedToken = localStorage.getItem("auth");
+      if (!storedToken) throw new Error("Token tidak ditemukan. Silakan login kembali.");
+      const parsedToken = JSON.parse(storedToken);
+      setToken(parsedToken);
+    } catch (error) {
+      console.error("Error saat mengambil token:", error.message);
+      alert("Token tidak valid atau sudah kadaluarsa. Silakan login kembali.");
+    }
+  };
+
+  const fetchSubmission = async (kelasId) => {
+    try {
+      const response = await api.post(
+        `${process.env.REACT_APP_API_BASE_URL}/kelasSubmission/submissionByUser`,
+        { id_kelas: idKelas },
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      const submissions = response.data || [];
+      setSubmission(submissions);
+    } catch (error) {
+      console.error("Error saat mengambil data submission:", error.message);
+    }
+  };
+
   const handleCertificate = () => {
     navigate("/certificate", { state: { kelasName: kelas.kelas.nama } });
   };
+
+
+  // useEffect untuk mengambil token
+  useEffect(() => {
+    fetchToken();
+  }, []);
+
+  // useEffect untuk mengambil data kelas dan user setelah token tersedia
+  useEffect(() => {
+    if (token) {
+      fetchSubmission();
+    }
+  }, [token]);
+
+  useEffect(() => {
+    if (submission[0]) {
+      console.log("ini adlaah submission ", submission[0].is_accepted)
+    }
+  }, [submission]);
 
   return (
     <ChakraProvider theme={theme}>
@@ -60,13 +114,15 @@ export default function KelasCard(kelas, submission) {
             {kelas.kelas.kelas_regists[0].progress} /{" "}
             {kelas.kelas.total_materi || "No Data"} Submateri
           </p>
-          {/* <p className="text-[11px] lg:text-[18px] font-normal leading-[28px] text-black">
-            {kelas.kelas.kelas_regists[0].progress} /{" "}
-            {kelas.kelas.total_materi || "No Data"} Tugas
-          </p> */}
           <p className="text-[11px] lg:text-[18px] font-normal leading-[28px] text-black">
-            0 / 1 Tugas
-            statestis {submission.is_accepted}
+            {
+              // Tampilkan status tugas berdasarkan submission
+              submission[0]
+                ? (submission[0].is_accepted === 0 || submission[0].is_accepted === false)
+                  ? "0 / 1 Tugas"
+                  : "1 / 1 Tugas"
+                : "0 / 1 Tugas"
+            }
           </p>
         </div>
         <div className="flex flex-col items-center">
@@ -86,17 +142,20 @@ export default function KelasCard(kelas, submission) {
               Lihat Tugas
             </Link>
           </div>
-          {kelas.kelas.persentase == 100 && (
-            <div className="flex items-center justify-center w-32 h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2 px-4">
+          {kelas.kelas.persentase == 100 &&
+            submission[0] &&
+            submission[0].is_accepted !== 0 &&
+            submission[0].is_accepted !== false && (
+              <div className="flex items-center justify-center w-32 h-fit p-[10px] lg:ml-[23px] bg-whiteSmoke500 border border-[#66666680] rounded-[10px] mb-2 px-4">
+                <button
+                  onClick={handleCertificate}
+                  className="font-medium text-md leading-[24px] lg:leading-[28px] font-[#0F1011]"
+                >
+                  Sertifikat
+                </button>
+              </div>
+            )}
 
-              <button
-                onClick={handleCertificate}
-                className="font-medium text-md leading-[24px] lg:leading-[28px] font-[#0F1011]"
-              >
-                Sertifikat
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </ChakraProvider>

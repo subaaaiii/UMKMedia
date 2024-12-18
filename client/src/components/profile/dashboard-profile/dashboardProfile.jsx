@@ -80,12 +80,6 @@ function DashboardProfile() {
     }
   };
 
-
-  useEffect(() => {
-    if (token) {
-      fetchKelas(token); // Ambil data kelas setelah token tersedia
-    }
-  }, [token]);
   // useEffect untuk mengambil token
   useEffect(() => {
     fetchToken();
@@ -112,9 +106,6 @@ function DashboardProfile() {
     getSubmissions();
   }, [kelas, user]); // Tambahkan `user` agar data submission diperbarui jika user.id berubah
 
-  useEffect(() => {
-    console.log("Updated submission data:", submission.is_accepted);
-  }, [submission]);
 
   return (
     <div className="justify-start lg:mt-[10px] lg:px-0 w-fit lg:w-[fit] h-full lg:h-full gap-[12px]">
@@ -137,7 +128,7 @@ function DashboardProfile() {
             <KelasCard
               key={index}
               kelas={kelasItem}
-              submission={submission[0]} // Kirim hanya submission terkait
+              submission={submission} // Kirim hanya submission terkait
             />
           );
         })
