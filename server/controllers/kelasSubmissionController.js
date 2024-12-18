@@ -27,17 +27,28 @@ const { Sequelize } = require("sequelize");
 const utility = require("./utility");
 const { Op } = require("sequelize");
 const fs = require("fs");
-const Kelas_submission = db.kelas_submission
+const Kelas_submission = db.kelas_submission;
+const user = db.User;
 
 module.exports = {
 
   getDetailSubmission: async (req, res) => {
     try {
-      const { id_user } = req.body;
-      const { id_kelas } = req.body;
-      const result = await kelas_submission.findAll({
+      const userData = req.dataToken;
+      const getuser = await user.findOne({
         where: {
-          id_user: id_user,
+          email: userData.email,
+        },
+        attributes: ["id"],
+      });
+
+      if (!getuser) {
+        throw new Error("USER TIDAK DITEMUKAN");
+      }
+      const { id_kelas } = req.body;
+      const result = await Kelas_submission.findAll({
+        where: {
+          id_user: getuser.id,
           id_kelas_detail: id_kelas
         },
         attributes: ["id", "link", "is_accepted"],
@@ -45,8 +56,8 @@ module.exports = {
 
       res.json(result);
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: "Internal Server Error" });
+      console.log(error.message);
+      res.status(500).json({ error });
     }
   },
 
@@ -72,6 +83,35 @@ module.exports = {
       // Jika submission berhasil diperbarui
       if (updatedSubmission[0] === 1) {
         return res.json({ success: true, message: "Status berhasil diubah" });
+      } else {
+        return res.status(400).json({ success: false, message: "Status gagal diubah" });
+      }
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "Internal Server Error" });
+    }
+  },
+
+  updateSubmission: async (req, res) => {
+    try {
+      const { id, link } = req.body;  // Mendapatkan id submission dan status baru (is_accepted)
+      
+      // Cek apakah id dan is_accepted ada dalam body
+      
+      console.log(id)
+      // Update status berdasarkan id
+      const updatedSubmission = await Kelas_submission.update(
+        { link },  // Data yang ingin diubah
+        {
+          where: {
+            id,  // Berdasarkan id submission
+          },
+        }
+      );
+  
+      // Jika submission berhasil diperbarui
+      if (updatedSubmission[0] === 1) {
+        return res.json({ success: true, message: "Link berhasil diubah" });
       } else {
         return res.status(400).json({ success: false, message: "Status gagal diubah" });
       }
@@ -110,16 +150,27 @@ module.exports = {
   //Post data kelas bisnis - subairi
   createNewSubmission: async (req, res) => {
     try {
+      const userData = req.dataToken;
+      const getuser = await user.findOne({
+        where: {
+          email: userData.email,
+        },
+        attributes: ["id"],
+      });
+
+      if (!getuser) {
+        throw new Error("USER TIDAK DITEMUKAN");
+      }
+
       console.log(req.body);
       const {
-        id_user,
         id_kelas_detail,
         link
       } = req.body;
       console.log("isinya ", req.body)
       await Kelas_submission.create({
         link: link,
-        id_user: id_user,
+        id_user: getuser.id,
         id_kelas_detail: id_kelas_detail,
         is_accepted: 0
       });
