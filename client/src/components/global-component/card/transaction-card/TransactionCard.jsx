@@ -294,19 +294,6 @@ export default function TransactionCard(transaksi) {
                   Batalkan
                 </p>
               </button>
-              <button
-                onClick={(event) => {
-                  event.stopPropagation();
-                  navigate(
-                    `/checkout-free/${transaksi.transaksi.kelas_bisni.id}`
-                  );
-                }}
-                className={`flex mx-[5px] sm:mx-0 w-[155px] h-[24px] lg:w-[107px] lg:h-[34px] justify-center items-center bg-black500 hover:bg-whiteSmoke800 rounded-[5px]`}
-              >
-                <p className="text-whiteSmoke500 shrink-0 font-medium text-[12px] lg:text-[16px] leading-[20px] lg:leading-[24px]">
-                  Selesaikan
-                </p>
-              </button>
             </div>
           ) : (
             ""

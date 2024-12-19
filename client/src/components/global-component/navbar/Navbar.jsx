@@ -328,7 +328,7 @@ function Navbar() {
         </ul>
         <div className="hidden lg:flex gap-[24px]">
           <a
-            href="https://wa.me/6282335676172"
+            href="https://wa.me/6283839772172"
             target="_blank"
             rel="noreferrer"
           >

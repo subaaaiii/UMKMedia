@@ -22,7 +22,7 @@ function HeroSection() {
           </p>
         </div>
 
-        <a href="https://wa.me/6282335676172" target="_blank" rel="noreferrer">
+        <a href="https://wa.me/6283839772172" target="_blank" rel="noreferrer">
           <ButtonBlack500 WIDTH={"w-[260px]"} TEXT_BUTTON={"Gabung Sekarang"} />
         </a>
       </div>

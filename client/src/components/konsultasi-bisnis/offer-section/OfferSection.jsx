@@ -15,7 +15,7 @@ export default function OfferSection() {
         Rp. 1.000.000,-
       </p>
       <button
-        onClick={() => window.open("https://wa.me/6282335676172", "_blank")}
+        onClick={() => window.open("https://wa.me/6283839772172", "_blank")}
         className="w-[160px] sm:w-[200px] py-[6px] md:py-[16px] px-[32px] rounded-[10px] bg-black500 text-whiteSmoke500 text-[12px] leading-[24px] md:text-[16px] md:leading-[24px] font-normal hover:bg-whiteSmoke500 hover:text-black500 hover:shadow-lg border-black500 border-2"
       >
         Hubungi Kami

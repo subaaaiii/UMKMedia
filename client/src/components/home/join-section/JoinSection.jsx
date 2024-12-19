@@ -29,14 +29,23 @@ function JoinSection() {
                 </p>
               </div>
               <div className="flex w-full items-start gap-[24px] ">
-              <a href="https://wa.me/6282335676172" target="_blank" rel="noreferrer">
-                <ButtonBorderWhitesmoke500
-                  TEXT_BUTTON={"Hubungi Kami"}
-                  WIDTH={"max-w-[200px]"}
-                  RESPONSIF={"flex"}
-                />
-              </a>
-                <a href="https://wa.me/6282335676172" target="_blank" rel="noreferrer" className="px-[64px] py-[16px] w-[232px] flex justify-center items-center rounded-[10px] bg-whiteSmoke500 border-[1px] ">
+                <a
+                  href="https://wa.me/6283839772172"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <ButtonBorderWhitesmoke500
+                    TEXT_BUTTON={"Hubungi Kami"}
+                    WIDTH={"max-w-[200px]"}
+                    RESPONSIF={"flex"}
+                  />
+                </a>
+                <a
+                  href="https://wa.me/6283839772172"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-[64px] py-[16px] w-[232px] flex justify-center items-center rounded-[10px] bg-whiteSmoke500 border-[1px] "
+                >
                   <p className="shrink-0 text-[16px] font-medium leading-[24px] text-black500">
                     Gabung Sekarang
                   </p>
