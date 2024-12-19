@@ -10,6 +10,7 @@ import { CiEdit } from "react-icons/ci";
 
 function TugasForm({ id }) {
   const { user } = useSelector((state) => state.userSlice);
+  const navigate = useNavigate();
   const defaultValues = {
     judul_tugas: "",
     deskripsi_tugas: "",
@@ -72,7 +73,7 @@ function TugasForm({ id }) {
       } catch (error) {
         showError(error.response?.data?.message);
       } finally {
-        // setIsSubmiting(false);
+        navigate("/profile/dashboard");
       }
     };
 
@@ -99,7 +100,7 @@ function TugasForm({ id }) {
       } catch (error) {
         showError(error.response?.data?.message);
       } finally {
-        // setIsSubmiting(false);
+        navigate("/profile/dashboard");
       }
     };
 
@@ -166,7 +167,7 @@ function TugasForm({ id }) {
         {/* Deskripsi Tugas */}
         <div className="mb-4">
           <h1 className="text-xl font-bold">Deskripsi Tugas</h1>
-          <p>{kelasBisnisDetail.deskripsi_tugas}</p>
+          <p className=" whitespace-pre-wrap">{kelasBisnisDetail.deskripsi_tugas}</p>
         </div>
 
         {/* Form Input */}

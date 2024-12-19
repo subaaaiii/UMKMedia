@@ -84,7 +84,7 @@ function Footer() {
             <div className="w-[304px] flex flex-col items-start justify-start gap-[52px]">
               <div className="flex flex-col gap-[16px] lg:gap-[24px] items-start">
                 <h1 className="text-[16px] lg:text-[20px] font-bold leading-[28px] text-whiteSmoke500">
-                  Hubungi Growlab
+                  Hubungi UMKMedia
                 </h1>
                 <a href="mailto:officialumkmedia@gmail.com">
                   <div className="flex justify-start items-center gap-[8px]">

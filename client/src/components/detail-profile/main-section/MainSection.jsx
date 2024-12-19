@@ -273,7 +273,7 @@ function MainSection() {
             </label>
             <div className="flex items-center gap-2">
               <p className="text-[12px] lg:text-[24px] font-medium leading-[30px] text-black400">
-                https://growlab.com/profile/
+                https://Umkmedia.com/profile/
               </p>
               <input
                 {...register("USERNAME")}
