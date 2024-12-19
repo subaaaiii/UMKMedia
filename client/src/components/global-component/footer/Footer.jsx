@@ -94,12 +94,12 @@ function Footer() {
                       className="w-[20px] h-[20px]"
                     />
                     <p className="text-[14px] lg:text-[19px] font-normal leading-[28px] text-whiteSmoke600">
-                    officialumkmedia@gmail.com
+                      officialumkmedia@gmail.com
                     </p>
                   </div>
                 </a>
                 <a
-                  href="https://wa.me/6282335676172"
+                  href="https://wa.me/6283839772172"
                   target="_blank"
                   rel="noreferrer"
                 >
